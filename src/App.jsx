@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import "./assets/sass/main.scss"
 
 import TopNavigationBar from "./components/TopNavigationBar.jsx"
+import TestGet from "./components/TestGet.jsx"
 
 function App() {
 	return (
@@ -13,8 +14,8 @@ function App() {
         <Col className="top-col"><span>hello</span></Col>
       </Row>
 			<Row>
-				<Col className="header-col clickable-button" xs={12}>
-					<h1>Projects</h1>
+				<Col className="header-col" xs={12}>
+					<TestGet />
 				</Col>
 				<Col className="header-col clickable-button" xs={12}>
 					<h1>Customers</h1>
