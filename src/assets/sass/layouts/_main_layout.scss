@@ -1,0 +1,17 @@
+@use '../base/colors.scss' as colors;
+@use '../base/mixins.scss' as mixins;
+
+.main-container,
+.top-col,
+.header-col,
+.paragraph-col,
+.button-col {
+  margin: 5px auto;
+  padding: 0.5rem;
+  @include mixins.flex-col-center;
+}
+
+.header-col {
+  height: 150px;
+  width: 330px;
+}

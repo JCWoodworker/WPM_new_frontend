@@ -1,0 +1,12 @@
+@use '../base/colors.scss' as colors;
+@use '../base/mixins.scss' as mixins;
+
+.navigationBar {
+  background-color: colors.$dark-gray;
+  padding: 1rem;
+  border-bottom: 1px solid colors.$medium-gray;
+  .navbar-brand {
+    color: colors.$medium-beige;
+    font-size: 1.5rem
+  };
+}
