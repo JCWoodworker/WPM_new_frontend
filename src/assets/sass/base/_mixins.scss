@@ -1,11 +1,15 @@
 @use './colors.scss' as colors;
 
+// Flexbox mixins
+
 @mixin flex-col-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+// Text mixins
 
 @mixin heading-text-color-weight {
   color: colors.$medium-beige;
@@ -15,7 +19,7 @@
 }
 
 @mixin paragraph-list-text-color-weight {
-  color: colors.$light-blue;
+  color: colors.$light-gray;
   font-weight: 400;
   width: fit-content;
   border-radius: 0.25rem;
