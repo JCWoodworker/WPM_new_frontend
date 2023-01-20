@@ -11,14 +11,17 @@
 
 // Text mixins
 
-@mixin heading-text-color-weight {
-  color: colors.$medium-beige;
+@mixin headings {
   font-weight: 700;
-  width: fit-content;
+  color: colors.$medium-beige;
   text-align: center;
+  width: 350px;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  background-image: url('../../../../public/WoodBackground.jpeg');
 }
 
-@mixin paragraph-list-text-color-weight {
+@mixin paragraphs {
   color: colors.$light-gray;
   font-weight: 400;
   width: fit-content;

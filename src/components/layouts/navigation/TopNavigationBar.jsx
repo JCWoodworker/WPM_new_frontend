@@ -1,6 +1,10 @@
+import { useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 
-const TopNavigationBar = () => {
+import TopLinks from "./TopLinks.jsx"
+
+const TopNavigationBar = ({ loggedIn }) => {
+
 	return (
 		<Navbar
 			collapseOnSelect
@@ -14,17 +18,7 @@ const TopNavigationBar = () => {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto"></Nav>
-					<Nav>
-						<Nav.Link href="#projects">Projects</Nav.Link>
-						<Nav.Link href="#customers">Customers</Nav.Link>
-						<Nav.Link href="#data">Data</Nav.Link>
-						<Nav.Link href="#settings">Settings</Nav.Link>
-						<Nav.Link href="#calc">BF Calc</Nav.Link>
-						<Nav.Link href="#priceList">Price List</Nav.Link>
-						<Nav.Link eventKey={1} href="#signIn">
-							Sign Out
-						</Nav.Link>
-					</Nav>
+					<TopLinks loggedIn={loggedIn}/>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
