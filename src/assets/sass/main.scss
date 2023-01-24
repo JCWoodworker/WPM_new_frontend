@@ -1,6 +1,7 @@
 @use './base' as base;
 @use './components' as components;
 @use './layouts' as layouts;
+@use './pages' as pages;
 
 body {
   background-color: base.$dark-gray;
