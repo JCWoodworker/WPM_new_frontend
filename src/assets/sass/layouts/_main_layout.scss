@@ -3,7 +3,7 @@
 
 .main-container,
 .top-col,
-.header-col,
+.header-row,
 .paragraph-col,
 .button-col {
   margin: 5px auto;
@@ -11,7 +11,11 @@
   @include mixins.flex-col-center;
 }
 
-.header-col {
-  height: 150px;
-  width: 330px;
+.header-row {
+  height: 800px;
+  width: 100%;
+  border: 1px solid colors.$medium-beige;
+  background-image: url('WoodBackground.jpeg');
+  margin: 2rem auto;
+  scroll-margin-block: 6rem;
 }

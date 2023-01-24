@@ -16,15 +16,14 @@
   color: colors.$medium-beige;
   text-align: center;
   width: 350px;
-  padding: 2rem;
   border-radius: 0.25rem;
-  background-image: url('../../../../public/WoodBackground.jpeg');
 }
 
-@mixin paragraphs {
-  color: colors.$light-gray;
-  font-weight: 400;
-  width: fit-content;
+// container mixins
+
+@mixin container {
+  color: colors.$medium-beige;
+  background-color: colors.$dark-gray;
+  border: 1px solid colors.$medium-beige;
   border-radius: 0.25rem;
-  text-align: center;
 }

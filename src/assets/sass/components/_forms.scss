@@ -1,0 +1,42 @@
+@use "../base/" as base;
+
+.boardfoot-form {
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  @include base.container;
+  @include base.flex-col-center;
+  padding: 3rem;
+  min-width: 300px;
+  h2 {
+    padding:0.25rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-label {
+  color: base.$medium-beige;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  color: base.$medium-beige;
+  background-color: base.$dark-gray;
+  border: 1px solid base.$medium-beige;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+  width: 150px;
+  p {
+    color: base.$medium-beige;
+  }
+}

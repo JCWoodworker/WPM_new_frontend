@@ -20,8 +20,3 @@ h3 {
   font-size: 1.5rem;
   @include base.headings;
 }
-
-p {
-  font-size: 1.25rem;
-  @include base.paragraphs;
-}

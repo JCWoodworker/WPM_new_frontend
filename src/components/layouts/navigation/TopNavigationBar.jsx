@@ -14,7 +14,7 @@ const TopNavigationBar = ({ loggedIn }) => {
 			variant="dark"
 		>
 			<Container>
-				<Navbar.Brand href="#home">RILW's Wood App</Navbar.Brand>
+				<Navbar.Brand href="https://www.koszelalumber.com" target="_blank	">Koszela Lumber</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto"></Nav>
