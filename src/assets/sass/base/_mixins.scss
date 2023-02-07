@@ -27,3 +27,8 @@
   border: 1px solid colors.$medium-beige;
   border-radius: 0.25rem;
 }
+
+@mixin border {
+  border: 1px solid colors.$medium-beige;
+  border-radius: 0.25rem;
+}

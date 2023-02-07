@@ -12,9 +12,9 @@
 }
 
 .header-row {
+  @include mixins.border;
   height: 800px;
   width: 100%;
-  border: 1px solid colors.$medium-beige;
   background-image: url('WoodBackground.jpeg');
   margin: 2rem auto;
   scroll-margin-block: 6rem;
