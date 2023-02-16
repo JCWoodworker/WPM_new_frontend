@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
 import BoardFootCalc from "./BoardFootCalc"
-import Registration from "../../Registration"
 
 const HomePage = () => {
 
@@ -15,7 +14,7 @@ const HomePage = () => {
 			</Row>
 			<Row>
 				<Col className="header-row" id="projects">
-					<Registration />
+					<h1>Projects</h1>
 				</Col>
 			</Row>
 			<Row>
