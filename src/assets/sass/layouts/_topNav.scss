@@ -1,12 +1,48 @@
-@use '../base/colors.scss' as colors;
-@use '../base/mixins.scss' as mixins;
+@use '../base' as base;
 
 .navigationBar {
-  background-color: colors.$dark-gray;
-  padding: 1rem;
-  border-bottom: 1px solid colors.$medium-gray;
-  .navbar-brand {
-    color: colors.$medium-beige;
-    font-size: 1.5rem
-  };
+	background-color: base.$blue-4;
+	border-bottom: 3px solid base.$blue-2;
+	box-shadow: base.$box-shadow;
+	.navbar-brand {
+		color: base.$blue-1;
+		font-size: 1.5rem;
+	}
+}
+
+// this is the logo in the top left corner
+// if you change the size, you'll also need to change `scroll-margin-block-start` in _main_layout.scss under .header-row
+
+.logo {
+	width: 250px;
+	height: auto;
+	padding-top: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+// These are the navigation links in the top right corner.  On smaller screens they collapse into a hamburger menu
+
+.navbar-nav {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#navLink {
+	color: base.$blue-1;
+	font-size: 1.25rem;
+	font-weight: bold;
+	@include base.border($shadow: false, $border: false);
+	width: fit-content;
+	padding: 2px 8px;
+	margin: 2px;
+	&:hover {
+		color: base.$blue-4;
+		background-color: base.$blue-1;
+	}
+}
+
+.navToggle {
+	background-color: base.$blue-4;
+	color: base.$blue-1;
 }
