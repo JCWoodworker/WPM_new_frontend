@@ -16,7 +16,7 @@ const GuestHomePage = () => {
 			
 			<FadeInSection>
 				<Row>
-					<Col className="header-row" id="whatIsThis">
+					<Col className="header-row" id="whatIsThis" >
 						<WhatIsThis />
 					</Col>
 				</Row>
