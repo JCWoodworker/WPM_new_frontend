@@ -1,34 +1,60 @@
-@use './colors.scss' as colors;
+@use "./colors.scss" as colors;
 
 // Flexbox mixins
 
 @mixin flex-col-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-row-center {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 // Text mixins
 
 @mixin headings {
-  font-weight: 700;
-  color: colors.$medium-beige;
-  text-align: center;
-  width: 350px;
-  border-radius: 0.25rem;
+	font-weight: 600;
+	margin: 1rem 0.5rem;
+	padding: 1rem 1rem;
+	width: fit-content;
+	color: colors.$blue-1;
+	background-color: colors.$blue-4;
+	@include border($shadow: true, $radius: true, $border: true);
+}
+
+@mixin heading-2-3 {
+	font-weight: 500;
+	padding: 0.5rem;
+	color: colors.$blue-4;
 }
 
 // container mixins
 
 @mixin container {
-  color: colors.$medium-beige;
-  background-color: colors.$dark-gray;
-  border: 1px solid colors.$medium-beige;
-  border-radius: 0.25rem;
+	color: colors.$blue-3;
+	background-color: colors.$blue-1;
 }
 
-@mixin border {
-  border: 1px solid colors.$medium-beige;
-  border-radius: 0.25rem;
+@mixin border(
+	$shadow: true,
+	$radius: true,
+	$border: true,
+	$thickness: 0px,
+	$color: colors.$blue-4
+) {
+	@if $shadow {
+		box-shadow: colors.$box-shadow;
+	}
+	@if $radius {
+		border-radius: 0.25rem;
+	}
+	@if $border {
+		border: $thickness solid $color;
+	}
 }

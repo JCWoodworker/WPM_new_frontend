@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-const Registration = () => {
+const SignUpForm = () => {
 	const [userPayload, setUserPayload] = useState({
 		firstName: "",
 		lastName: "",
@@ -26,9 +26,8 @@ const Registration = () => {
 
 	return (
 		<div>
-			<h1>Registration</h1>
-
-			<form onSubmit={submitForm}>
+			
+			<form className="form-control get-involved-form" onSubmit={submitForm}>
 				<label>First Name</label>
 				<input
 					onChange={handleChange}
@@ -76,4 +75,4 @@ const Registration = () => {
 	)
 }
 
-export default Registration
+export default SignUpForm

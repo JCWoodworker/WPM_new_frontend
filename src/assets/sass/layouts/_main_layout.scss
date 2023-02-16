@@ -1,21 +1,41 @@
-@use '../base/colors.scss' as colors;
-@use '../base/mixins.scss' as mixins;
+@use '../base' as base;
 
-.main-container,
+
+.main_container {
+	margin: 9rem auto;
+}
+
 .top-col,
-.header-row,
 .paragraph-col,
 .button-col {
-  margin: 5px auto;
-  padding: 0.5rem;
-  @include mixins.flex-col-center;
+	margin: 0 auto;
+	@include base.flex-col-center;
+	h1 {
+		text-align: left;
+	}
 }
 
 .header-row {
-  @include mixins.border;
-  height: 800px;
-  width: 100%;
-  background-image: url('WoodBackground.jpeg');
-  margin: 2rem auto;
-  scroll-margin-block: 6rem;
+	@include base.border($thickness: 3px);
+	min-height: 80vh;
+	width: 100vh;
+	background-color: base.$blue-2;
+	margin: 0.5rem auto;
+	padding-bottom: 2rem;
+	scroll-behavior: smooth;
+	scroll-margin-block-start: 8.5rem;
+}
+
+.row-image {
+	width: 90%;
+	height: 90%;
+	object-fit: cover;
+	@include base.border($border: true, $thickness: 3px, $color: base.$blue-4);
+}
+
+.whatIsIt-row3 {
+	margin: 2rem auto 0 auto;
+	padding: 1rem;;
+	@include base.border();
+	background-color: base.$blue-1;
 }

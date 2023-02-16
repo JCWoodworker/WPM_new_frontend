@@ -2,15 +2,15 @@ import React, { useState } from "react"
 import "./assets/sass/main.scss"
 
 import TopNavigationBar from "./components/layouts/navigation/TopNavigationBar.jsx"
-import HomePage from "./components/layouts/HomePage.jsx"
 import UserHome from "./components/layouts/userPages/UserHome.jsx"
 import AdminHome from "./components/layouts/adminPages/AdminHome.jsx"
+import GuestHomePage from "./components/layouts/guestPages/GuestHomePage"
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState({
-		guest: false,
+		guest: true,
 		admin: false,
-		user: true,
+		user: false,
 	})
 
 	if (loggedIn.user) {
@@ -27,15 +27,14 @@ function App() {
 				<AdminHome />
 			</>
 		)
-	} else {
-		return (
-			<>
-				<TopNavigationBar loggedIn={loggedIn} />
-				<HomePage />
-			</>
-		)
 	}
 
+	return (
+		<>
+			<TopNavigationBar loggedIn={loggedIn} />
+			<GuestHomePage />
+		</>
+	)
 }
 
 export default App
