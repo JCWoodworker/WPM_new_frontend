@@ -27,7 +27,7 @@ const SignUpForm = () => {
 	return (
 		<div>
 			
-			<form className="form-control get-involved-form" onSubmit={submitForm} autoFocus={false}>
+			<form className="form-control" onSubmit={submitForm} autoFocus={false}>
 				<label>First Name</label>
 				<input
 					onChange={handleChange}
