@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
 
 const SignUpForm = () => {
@@ -8,7 +9,8 @@ const SignUpForm = () => {
 		username: "",
 		password: "",
 		userType: "user",
-	})  
+	})
+	const [formMessage, setFormMessage] = useState("")
 
 	const handleChange = (e) => {
 		setUserPayload({
@@ -17,61 +19,105 @@ const SignUpForm = () => {
 		})
 	}
 
+	const clearForm = () => {
+		setUserPayload({
+			firstName: "",
+			lastName: "",
+			username: "",
+			password: "",
+			userType: "user",
+		})
+	}
+
 	const submitForm = async (e) => {
 		const { firstName, lastName, username, password, userType } = userPayload
 		e.preventDefault()
-    const response = await axios.post("http://localhost:3000/users/register", userPayload)
-    console.log(response.data)
+		const response = await axios.post(
+			"http://localhost:3000/users/register",
+			userPayload
+		)
+		if (response.data === "Username already exists") {
+			setFormMessage("That username is already taken. Please try again.")
+		} else {
+			setFormMessage("Success! Please log in.")
+		}
+		clearForm()
 	}
 
 	return (
-		<div>
-			
-			<form className="form-control" onSubmit={submitForm} autoFocus={false}>
-				<label>First Name</label>
-				<input
-					onChange={handleChange}
-					name="firstName"
-					type="text"
-					placeholder="Enter your first name"
-				/>
-
-				<label>Last Name</label>
-				<input
-					onChange={handleChange}
-					name="lastName"
-					type="text"
-					placeholder="Enter your last name"
-				/>
-
-				<label>User Name</label>
-				<input
-					onChange={handleChange}
-					name="username"
-					type="text"
-					placeholder="Select a username"
-				/>
-
-				<label>Password</label>
-				<input
-					onChange={handleChange}
-					name="password"
-					type="password"
-					placeholder="Password"
-				/>
-
-				<label>User Type</label>
-				<select 
-          onChange={handleChange} 
-          name="userType">
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-
-				<button type="submit">Submit</button>
-
+		<Container>
+			<form
+				className="form-control regular-form text-center row-bottom-text-container"
+				onSubmit={submitForm}
+				autoFocus={false}
+			>
+				<Row>
+					<Col>
+						<label>First Name</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="firstName"
+							type="text"
+							placeholder="Enter your first name"
+						/>
+					</Col>
+				</Row>
+				<Row>
+					<Col>
+						<label>Last Name</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="lastName"
+							type="text"
+							placeholder="Enter your last name"
+						/>
+					</Col>
+				</Row>
+				<Row>
+					<Col>
+						<label>User Name</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="username"
+							type="text"
+							placeholder="Select a username"
+						/>
+					</Col>
+				</Row>
+				<Row>
+					<Col>
+						<label>Password</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="password"
+							type="password"
+							placeholder="Password"
+						/>
+					</Col>
+				</Row>
+				<Row>
+					<p style={{ color: "red" }}>{formMessage}</p>
+					<button type="submit" className="clickable-button">
+						Submit
+					</button>
+				</Row>
 			</form>
-		</div>
+			<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
+				<h5>
+					Side note ... You'll be able to adjust specific settings like labor
+					rate, retail markup, and even wood waste, which accounts for the percentage
+					of wood lost to milling!
+				</h5>
+			</Row>
+		</Container>
 	)
 }
 

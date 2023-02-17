@@ -4,45 +4,7 @@
 	margin-bottom: 1rem;
 }
 
-.form-container {
-	@include base.container;
-	@include base.flex-col-center;
-	padding: 3rem;
-	min-width: 300px;
-	h2 {
-		padding: 0.25rem;
-	}
-}
-
-.form-group {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-}
-
-.form-control {
-	@include base.flex-row-center;
-	gap: 1rem;
-	color: base.$blue-1;
-	background-color: base.$blue-3;
-	@include base.border($shadow: false, $border: true, $thickness: 2px, $color: base.$blue-4);
-	margin: 0.5rem;
-	padding: 1rem;
+.regular-form {
+	@include base.form-container;
 	width: fit-content;
-	div {
-		display: flex;
-		flex-direction: column;
-		label {
-			text-align: center;
-			color: base.$blue-1;
-			font-size: 1rem;
-			font-weight: 700;
-			margin-bottom: 0.5rem;
-		}
-	}
-	p {
-		color: base.$blue-1;
-	}
 }

@@ -36,7 +36,7 @@ const WhatIsThis = () => {
 							and even manage customers with a built-in CRM.</h3>
 					</Col>
 				</Row>
-				<Row className="d-flex justify-content-center align-items-center text-center whatIsIt-row3">
+				<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
 					<Col>
 						<h3>It's free to use, give it a try!</h3>
 						<h5>⬇️ Use the sign up form below ⬇️</h5>
