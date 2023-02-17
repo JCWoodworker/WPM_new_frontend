@@ -2,12 +2,13 @@
 @use "../base/mixins.scss";
 
 .clickable-button {
+	@include mixins.border();
 	color: colors.$blue-1;
 	background-color: colors.$purple-4;
-	@include mixins.border();
 	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	font-weight: 700;
+	width: 200px;
 	&:hover {
 		cursor: pointer;
 	}

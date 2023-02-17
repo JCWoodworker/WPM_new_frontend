@@ -12,7 +12,7 @@
 @mixin flex-row-center {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 }
 
@@ -37,15 +37,54 @@
 // container mixins
 
 @mixin container {
-	color: colors.$blue-3;
+	color: colors.$blue-4;
 	background-color: colors.$blue-1;
 }
+
+@mixin text-container {
+	margin: 2rem auto 0 auto;
+	padding: 1rem;
+	@include border(
+		$shadow: true,
+		$radius: true,
+		$border: true,
+		$color: colors.$blue-4
+	);
+	background-color: colors.$blue-1;
+}
+
+// Form mixins
+
+@mixin form-container {
+	@include container;
+	@include border(
+		$shadow: true,
+		$radius: true,
+		$border: true,
+		$color: colors.$blue-4
+	);
+	width: fit-content;
+	padding: 1.5rem;
+	label {
+		font-weight: 600;
+		padding: 0.75rem;
+	}
+	input {
+		margin: 0.25rem;
+		padding: 0.75rem;
+	}
+	button {
+		margin: 0.5rem auto;
+	}
+}
+
+// Border mixin
 
 @mixin border(
 	$shadow: true,
 	$radius: true,
 	$border: true,
-	$thickness: 0px,
+	$thickness: 2px,
 	$color: colors.$blue-4
 ) {
 	@if $shadow {
