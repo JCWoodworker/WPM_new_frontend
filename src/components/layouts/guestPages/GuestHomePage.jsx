@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
+import FadeInSection from "../../services/FadeInSection"
+
 import WhatIsThis from "./WhatIsThis"
 import SignUpPage from "./signUp/SignUpPage"
-import FadeInSection from "../../services/FadeInSection"
+import SignInPage from "./signIn/SignInPage"
 
 const GuestHomePage = () => {
 	const [pageViewToggle, setPageViewToggle] = useState(false)
@@ -26,6 +28,14 @@ const GuestHomePage = () => {
 				<Row>
 					<Col className="header-row" id="signUpPage">
 						<SignUpPage />
+					</Col>
+				</Row>
+			</FadeInSection>
+
+			<FadeInSection>
+				<Row>
+					<Col className="header-row" id="signInPage">
+						<SignInPage />
 					</Col>
 				</Row>
 			</FadeInSection>

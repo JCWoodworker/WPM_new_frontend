@@ -49,7 +49,6 @@ const SignUpForm = () => {
 			<form
 				className="form-control regular-form text-center row-bottom-text-container"
 				onSubmit={submitForm}
-				autoFocus={false}
 			>
 				<Row>
 					<Col>
