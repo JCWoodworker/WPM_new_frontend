@@ -37,7 +37,7 @@ const SignUpForm = () => {
 			userPayload
 		)
 		if (response.data === "Username already exists") {
-			setFormMessage("That username is already taken. Please try again.")
+			setFormMessage("Something went wrong. Try using another username or try again later.")
 		} else {
 			setFormMessage("Success! Please log in.")
 		}
