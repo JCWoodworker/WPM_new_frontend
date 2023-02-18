@@ -23,7 +23,7 @@ function App() {
 
 	if (loggedInState.loggedIn) {
 		mainPage = <UserHome />
-		buttonText = "Log Out Current User"
+		buttonText = "Log Out The Current User"
 	}
 
 	return (
