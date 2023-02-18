@@ -33,16 +33,23 @@ const SignInForm = () => {
 				"http://localhost:3000/users/auth/login",
 				userPayload
 			)
-      if (response.status === 201) {
-        localStorage.setItem("wpm_access_token", response.data.access_token)
-				setLoggedInState({...loggedInState, loggedIn: true})
-        setJwt(response.data.token)
-        clearForm()
-      }
+			if (response.status === 201) {
+				const sessionInfo = {
+					wpm_access_token: response.data.access_token,
+					wpm_user: response.data.user,
+				}
+				sessionStorage.setItem("userData", JSON.stringify(sessionInfo))
+				setLoggedInState({
+					...loggedInState,
+					loggedIn: true,
+					userData: response.data.user,
+				})
+				clearForm()
+			}
 		} catch (error) {
-      if (error.response.status === 401) {
-        setFormMessage("Incorrect username/password combination")
-      }
+			if (error.response.status === 401) {
+				setFormMessage("Incorrect username/password combination")
+			}
 			console.log(error)
 		}
 	}

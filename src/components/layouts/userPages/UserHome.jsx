@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import { loggedInContext } from "../../../App.jsx"
 
 const UserHome = () => {
-	useEffect(() => {
-		const handleBeforeUnload = (event) => {
-			event.preventDefault()
-			confirm("Are you sure you want to leave?")
-				? localStorage.removeItem("wpm_access_token")
-				: "Whew, that was close!"
-		}
-
-		window.addEventListener("beforeunload", handleBeforeUnload)
-
-		return () => {
-			window.removeEventListener("beforeunload", handleBeforeUnload)
-		}
-	}, [])
-
+	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
+	
 	return (
 		<Container className="main_container">
 			<Row>
