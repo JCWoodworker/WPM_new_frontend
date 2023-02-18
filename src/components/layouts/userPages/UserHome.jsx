@@ -4,6 +4,8 @@ import { loggedInContext } from "../../../App.jsx"
 
 import FadeInSection from "../../services/FadeInSection.jsx"
 
+import UserProjects from "./projects/UserProjects.jsx"
+
 const UserHome = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
 
@@ -19,7 +21,7 @@ const UserHome = () => {
 			<FadeInSection>
 				<Row>
 					<Col className="header-row" id="projects">
-						<h1>Projects</h1>
+						<UserProjects />
 					</Col>
 				</Row>
 			</FadeInSection>
