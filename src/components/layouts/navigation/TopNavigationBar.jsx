@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap"
 import TopLinks from "./TopLinks.jsx"
 import "../../../../public/Logo.png"
 
-const TopNavigationBar = ({ loggedIn }) => {
+const TopNavigationBar = ({ loggedInState }) => {
 
 	return (
 		<Navbar
@@ -20,7 +20,7 @@ const TopNavigationBar = ({ loggedIn }) => {
 				<Navbar.Toggle className="navToggle" aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto"></Nav>
-					<TopLinks loggedIn={loggedIn}/>
+					<TopLinks loggedInState={loggedInState}/>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

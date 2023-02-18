@@ -8,10 +8,6 @@ import SignUpPage from "./signUp/SignUpPage"
 import SignInPage from "./signIn/SignInPage"
 
 const GuestHomePage = () => {
-	const [pageViewToggle, setPageViewToggle] = useState(false)
-	const togglePageView = () => {
-		return null
-	}
 
 	return (
 		<Container className="main_container">
