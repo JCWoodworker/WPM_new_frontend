@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import NewProjectForm from "./NewProjectForm"
 import axios from "axios"
 
 const UserProjects = () => {
-	// const [toggleProjectForm, setToggleProjectForm] = useState(false)
 	const [projects, setProjects] = useState([])
+	const [query, setQuery] = useState("")
 
 	const getAllData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
@@ -18,8 +18,8 @@ const UserProjects = () => {
 			const response = await axios.get(
 				`http://localhost:3000/projects/`,
 				config
-				)
-				setProjects(response.data)
+			)
+			setProjects(response.data)
 		} catch (error) {
 			console.log(`Failure ${error}`)
 		}
@@ -29,20 +29,32 @@ const UserProjects = () => {
 		getAllData()
 	}, [])
 
-	let projectList = projects.map((project) => {
-		return (
-			<div key={project.name}>
-				<h3>{project.name}</h3>
-				<p>{project.description}</p>
-			</div>
-		)
-	})
+	const filteredProjects = useMemo(() => {
+		return projects.filter((project) => {
+			return project.name.toLowerCase().includes(query.toLowerCase())
+		})
+	}, [projects, query])
 
 	return (
 		<>
-			<h1>Projects</h1>
-			<NewProjectForm projects={projects} setProjects={setProjects} />
-			{projectList}
+			<div className="headerSearch">
+				<h1>Projects</h1>
+				<input
+					className="searchBar"
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					type="search"
+					placeholder="Search..."
+				/>
+			</div>
+			<div>
+				<h3>Projects:</h3>
+				{filteredProjects.map((project) => (
+					<div>{project.name}</div>
+				))}
+				<h3>Add a new project</h3>
+				<NewProjectForm projects={projects} setProjects={setProjects} />
+			</div>
 		</>
 	)
 }

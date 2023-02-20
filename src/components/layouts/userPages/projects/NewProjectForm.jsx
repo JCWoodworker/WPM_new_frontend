@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react"
-import { Container, Row, Col } from "react-bootstrap"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
 
@@ -12,7 +11,7 @@ const NewProjectForm = (props) => {
 		userId: loggedInState.userData.userId,
 		laborHours: "",
 		quantity: "",
-		stage: "",
+		stage: "planning",
 	})
 
 	const handleChange = (e) => {
@@ -44,7 +43,7 @@ const NewProjectForm = (props) => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="regular-form">
 				<input
 					type="text"
 					onChange={handleChange}
@@ -60,12 +59,6 @@ const NewProjectForm = (props) => {
 				<input
 					type="number"
 					onChange={handleChange}
-					name="customerId"
-					placeholder="customerId"
-				></input>
-				<input
-					type="number"
-					onChange={handleChange}
 					name="laborHours"
 					placeholder="laborHours"
 				></input>
@@ -75,13 +68,7 @@ const NewProjectForm = (props) => {
 					name="quantity"
 					placeholder="quantity"
 				></input>
-				<input
-					type="text"
-					onChange={handleChange}
-					name="stage"
-					placeholder="stage"
-				></input>
-				<button type="submit">Submit</button>
+				<button type="submit" className="cickable-button">Submit</button>
 			</form>
 		</>
 	)

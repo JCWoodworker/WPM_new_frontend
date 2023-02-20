@@ -1,0 +1,15 @@
+@use "../base" as base;
+
+.headerSearch {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 1rem;
+}
+
+.searchBar {
+	background-color: base.$blue-1;
+	color: base.$blue-4;
+	width: 250px;
+	height: 50px;
+}
