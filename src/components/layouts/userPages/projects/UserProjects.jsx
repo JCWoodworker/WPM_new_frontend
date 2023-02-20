@@ -10,21 +10,17 @@ const UserProjects = () => {
 
 	const getAllData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
-		const userId = userData.wpm_user.userId
 		const access_token = `Bearer ${userData.wpm_access_token}`
 		const config = {
 			headers: { Authorization: access_token },
 		}
 		try {
-			debugger
 			const response = await axios.get(
 				`http://localhost:3000/projects/`,
 				config
-			)
-			debugger
-			setProjects(response.data)
+				)
+				setProjects(response.data)
 		} catch (error) {
-			debugger
 			console.log(`Failure ${error}`)
 		}
 	}
@@ -34,7 +30,6 @@ const UserProjects = () => {
 	}, [])
 
 	let projectList = projects.map((project) => {
-		debugger
 		return (
 			<div key={project.name}>
 				<h3>{project.name}</h3>
