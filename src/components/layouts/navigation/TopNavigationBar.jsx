@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 
 import TopLinks from "./TopLinks.jsx"
-import "../../../../public/Logo.png"
+import "/Logo.png"
 
 const TopNavigationBar = ({ loggedInState }) => {
 
