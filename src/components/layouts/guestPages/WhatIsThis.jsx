@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import "../../../../public/sawdust.jpg"
-import "../../../../public/glueup002.jpg"
+import "/sawdust.jpg"
+import "/glueup002.jpg"
 
 const WhatIsThis = () => {
 	return (

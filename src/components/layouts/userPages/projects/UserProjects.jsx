@@ -16,11 +16,10 @@ const UserProjects = () => {
 		}
 		try {
 			const response = await axios.get(
-				"http://localhost:3000/projects/allProjects",
+				`http://localhost:3000/projects/`,
 				config
-			)
-			debugger
-			setProjects(response.data)
+				)
+				setProjects(response.data)
 		} catch (error) {
 			console.log(`Failure ${error}`)
 		}
@@ -31,7 +30,6 @@ const UserProjects = () => {
 	}, [])
 
 	let projectList = projects.map((project) => {
-		debugger
 		return (
 			<div key={project.name}>
 				<h3>{project.name}</h3>
