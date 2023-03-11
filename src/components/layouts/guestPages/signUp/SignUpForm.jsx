@@ -37,11 +37,13 @@ const SignUpForm = () => {
 			userPayload
 		)
 		if (response.data === "Username already exists") {
-			setFormMessage("Something went wrong. Try using another username or try again later.")
+			setFormMessage(
+				"Something went wrong. Try using another username or try again later."
+			)
 		} else {
-			setFormMessage("Success! Please log in.")
+			setFormMessage("Success! Please sign in below. ⬇️")
+			clearForm()
 		}
-		clearForm()
 	}
 
 	return (
@@ -60,6 +62,7 @@ const SignUpForm = () => {
 							name="firstName"
 							type="text"
 							placeholder="Enter your first name"
+							value={userPayload.firstName}
 						/>
 					</Col>
 				</Row>
@@ -73,6 +76,7 @@ const SignUpForm = () => {
 							name="lastName"
 							type="text"
 							placeholder="Enter your last name"
+							value={userPayload.lastName}
 						/>
 					</Col>
 				</Row>
@@ -86,6 +90,7 @@ const SignUpForm = () => {
 							name="username"
 							type="text"
 							placeholder="Select a username"
+							value={userPayload.username}
 						/>
 					</Col>
 				</Row>
@@ -99,6 +104,7 @@ const SignUpForm = () => {
 							name="password"
 							type="password"
 							placeholder="Password"
+							value={userPayload.password}
 						/>
 					</Col>
 				</Row>
@@ -109,11 +115,12 @@ const SignUpForm = () => {
 					</button>
 				</Row>
 			</form>
+
 			<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
 				<h5>
 					Side note ... You'll be able to adjust specific settings like labor
-					rate, retail markup, and even wood waste, which accounts for the percentage
-					of wood lost to milling!
+					rate, retail markup, and even wood waste, which accounts for the
+					percentage of wood lost to milling!
 				</h5>
 			</Row>
 		</Container>
