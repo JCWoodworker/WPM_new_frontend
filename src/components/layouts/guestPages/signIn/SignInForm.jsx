@@ -90,7 +90,7 @@ const SignInForm = () => {
 				<Row>
 					<p style={{ color: "red" }}>{formMessage}</p>
 					<button type="submit" className="clickable-button">
-						Submit
+						Sign In
 					</button>
 				</Row>
 			</form>
