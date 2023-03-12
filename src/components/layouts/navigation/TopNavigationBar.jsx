@@ -3,8 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap"
 import TopLinks from "./TopLinks.jsx"
 import "/Logo.png"
 
-const TopNavigationBar = ({ loggedInState }) => {
-
+const TopNavigationBar = ({ loggedInState, setLoggedInState }) => {
 	return (
 		<Navbar
 			collapseOnSelect
@@ -17,10 +16,16 @@ const TopNavigationBar = ({ loggedInState }) => {
 				<Navbar.Brand href="https://www.rilocalwoodworks.com" target="_blank	">
 					<img className="logo" src="/Logo.png" alt="Logo" />
 				</Navbar.Brand>
-				<Navbar.Toggle className="navToggle" aria-controls="responsive-navbar-nav" />
+				<Navbar.Toggle
+					className="navToggle"
+					aria-controls="responsive-navbar-nav"
+				/>
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto"></Nav>
-					<TopLinks loggedInState={loggedInState}/>
+					<TopLinks
+						loggedInState={loggedInState}
+						setLoggedInState={setLoggedInState}
+					/>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

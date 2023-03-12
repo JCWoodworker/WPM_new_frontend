@@ -1,11 +1,9 @@
 import React from "react"
 import { Nav } from "react-bootstrap"
 
-const TopLinks = ({ loggedInState }) => {
-	const signUpInOutClick = (event) => {
-		event.preventDefault()
-		alert(`This functionality has not been implemented yet.`)
-	}
+import SignOutButton from "./SignOutButton"
+
+const TopLinks = ({ loggedInState, setLoggedInState }) => {
 
 	const userLinks = (
 		<Nav>
@@ -27,9 +25,7 @@ const TopLinks = ({ loggedInState }) => {
 			<Nav.Link id="navLink" href="#priceList">
 				Price List
 			</Nav.Link>
-			<Nav.Link id="navLink" onClick={signUpInOutClick}>
-				Sign Out
-			</Nav.Link>
+			<SignOutButton setLoggedInState={setLoggedInState}/>
 		</Nav>
 	)
 

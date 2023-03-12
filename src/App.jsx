@@ -8,45 +8,36 @@ import GuestHomePage from "./components/layouts/guestPages/GuestHomePage"
 export const loggedInContext = createContext()
 
 function App() {
-
 	const [loggedInState, setLoggedInState] = useState({
 		userData: undefined,
 		loggedIn: false,
 	})
 
 	useEffect(() => {
-		const storedUserData = sessionStorage.getItem('userData');
+		const storedUserData = sessionStorage.getItem("userData")
 		if (storedUserData) {
-			const userData = JSON.parse(storedUserData);
+			const userData = JSON.parse(storedUserData)
 			setLoggedInState({
 				...loggedInState,
 				loggedIn: true,
 				userData: userData.wpm_user,
 			})
 		}
-	}, []);
-
-	const logUserOut = (event) => {
-		event.preventDefault()
-		setLoggedInState({ ...loggedInState, loggedIn: false, userData: undefined })
-		sessionStorage.removeItem('userData')
-	}
+	}, [])
 
 	let mainPage = <GuestHomePage />
-	let buttonText = "Not Currently Logged In"
 
 	if (loggedInState.loggedIn) {
 		mainPage = <UserHome />
-		buttonText = "Log Out The Current User"
 	}
 
 	return (
 		<loggedInContext.Provider value={[loggedInState, setLoggedInState]}>
-			<TopNavigationBar loggedInState={loggedInState} />
+			<TopNavigationBar
+				loggedInState={loggedInState}
+				setLoggedInState={setLoggedInState}
+			/>
 			{mainPage}
-			<button className="clickable-button" onClick={logUserOut}>
-				{buttonText}
-			</button>
 		</loggedInContext.Provider>
 	)
 }
