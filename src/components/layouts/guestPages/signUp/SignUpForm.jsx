@@ -10,7 +10,10 @@ const SignUpForm = () => {
 		password: "",
 		userType: "user",
 	})
-	const [formMessage, setFormMessage] = useState("")
+	const [formMessage, setFormMessage] = useState({
+		message: "",
+		color: "",
+	})
 
 	const handleChange = (e) => {
 		setUserPayload({
@@ -37,11 +40,16 @@ const SignUpForm = () => {
 			userPayload
 		)
 		if (response.data === "Username already exists") {
-			setFormMessage(
-				"Something went wrong. Try using another username or try again later."
-			)
+			setFormMessage({
+				message:
+					"Something went wrong.Try using another username or try again later.",
+				color: "red",
+			})
 		} else {
-			setFormMessage("Success! Please sign in below. ⬇️")
+			setFormMessage({
+				message: "Success! Please sign in below. ⬇️",
+				color: "green",
+			})
 			clearForm()
 		}
 	}
@@ -109,7 +117,7 @@ const SignUpForm = () => {
 					</Col>
 				</Row>
 				<Row>
-					<p style={{ color: "red" }}>{formMessage}</p>
+					<p style={{ color: formMessage.color }}>{formMessage.message}</p>
 					<button type="submit" className="clickable-button">
 						Sign Up
 					</button>
