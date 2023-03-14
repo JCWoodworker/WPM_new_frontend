@@ -3,12 +3,13 @@
 
 .main_container {
 	margin: 9rem auto;
+	padding: 0rem;
 }
 
 .header-row {
 	@include base.border($thickness: 3px);
 	min-height: 40vh;
-	width: 100vh;
+	width: 100%;
 	background-color: base.$main-color-scheme-2;
 	margin: 0.5rem auto;
 	padding-bottom: 2rem;
