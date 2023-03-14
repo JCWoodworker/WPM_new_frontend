@@ -3,34 +3,3 @@
 @use './layouts' as layouts;
 @use './pages' as pages;
 @use './effects/' as effects;
-
-
-
-
-
-
-
-body {
-  // background-color: base.$blue-4_transparent;
-  background-image: url('/WoodBackground.jpeg');
-}
-
-h1 {
-  font-size: 2rem;
-  @include base.headings;
-}
-
-h2 {
-  font-size: 2rem;
-  @include base.heading-2-3;
-}
-
-h3 {
-  font-size: 1.5rem;
-  @include base.heading-2-3;
-}
-
-p {
-  color: base.$blue-1
-}
-

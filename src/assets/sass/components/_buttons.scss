@@ -3,22 +3,23 @@
 
 .clickable-button {
 	@include mixins.border();
-	color: colors.$blue-1;
-	background-color: colors.$purple-4;
+	color: colors.$main-color-scheme-1;
+	background-color: colors.$main-color-scheme-4;
 	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	font-weight: 700;
 	width: 200px;
 	&:hover {
 		cursor: pointer;
+		background-color: colors.$main-color-scheme-3;
 	}
 	&:active {
-		color: colors.$blue-4;
-		background-color: colors.$blue-1;
+		color: colors.$main-color-scheme-4;
+		background-color: colors.$main-color-scheme-1;
 	}
 	a {
 		text-decoration: none;
-		color: colors.$blue-1;
+		color: colors.$main-color-scheme-1;
 	}
 }
 

@@ -1,11 +1,11 @@
 @use '../base' as base;
 
 .navigationBar {
-	background-color: base.$blue-4;
-	border-bottom: 3px solid base.$blue-2;
+	background-color: base.$main-color-scheme-4;
+	border-bottom: 3px solid base.$main-color-scheme-2;
 	box-shadow: base.$box-shadow;
 	.navbar-brand {
-		color: base.$blue-1;
+		color: base.$main-color-scheme-1;
 		font-size: 1.5rem;
 	}
 }
@@ -29,7 +29,7 @@
 }
 
 #navLink {
-	color: base.$blue-1;
+	color: base.$main-color-scheme-1;
 	font-size: 1.25rem;
 	font-weight: bold;
 	@include base.border($shadow: false, $border: false);
@@ -37,12 +37,12 @@
 	padding: 2px 8px;
 	margin: 2px;
 	&:hover {
-		color: base.$blue-4;
-		background-color: base.$blue-1;
+		color: base.$main-color-scheme-4;
+		background-color: base.$main-color-scheme-1;
 	}
 }
 
 .navToggle {
-	background-color: base.$blue-4;
-	color: base.$blue-1;
+	background-color: base.$main-color-scheme-4;
+	color: base.$main-color-scheme-1;
 }

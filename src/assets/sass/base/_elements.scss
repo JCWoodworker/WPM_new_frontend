@@ -1,0 +1,27 @@
+@use './colors.scss' as colors;
+@use './mixins.scss' as mixins;
+
+body {
+  background-color: colors.$main-color-scheme-3;
+  //background-image: url('/WoodBackground.jpeg');
+}
+
+h1 {
+  font-size: 2rem;
+  @include mixins.headings;
+}
+
+h2 {
+  font-size: 2rem;
+  @include mixins.heading-2-3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  @include mixins.heading-2-3;
+}
+
+p {
+  color: colors.$main-color-scheme-1
+}
+

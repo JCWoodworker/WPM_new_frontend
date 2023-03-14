@@ -9,7 +9,7 @@
 	@include base.border($thickness: 3px);
 	min-height: 40vh;
 	width: 100vh;
-	background-color: base.$blue-2;
+	background-color: base.$main-color-scheme-2;
 	margin: 0.5rem auto;
 	padding-bottom: 2rem;
 	scroll-behavior: smooth;
@@ -20,7 +20,7 @@
 	width: 90%;
 	height: 90%;
 	object-fit: cover;
-	@include base.border($border: true, $thickness: 3px, $color: base.$blue-4);
+	@include base.border($border: true, $thickness: 3px, $color: base.$main-color-scheme-4);
 }
 
 .row-bottom-text-container {

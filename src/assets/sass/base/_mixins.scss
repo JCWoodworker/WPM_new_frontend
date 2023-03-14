@@ -23,22 +23,22 @@
 	margin: 1rem 0.5rem;
 	padding: 1rem 1rem;
 	width: fit-content;
-	color: colors.$blue-1;
-	background-color: colors.$blue-4;
+	color: colors.$main-color-scheme-1;
+	background-color: colors.$main-color-scheme-4;
 	@include border($shadow: true, $radius: true, $border: true);
 }
 
 @mixin heading-2-3 {
 	font-weight: 500;
 	padding: 0.5rem;
-	color: colors.$blue-4;
+	color: colors.$main-color-scheme-4;
 }
 
 // container mixins
 
 @mixin container {
-	color: colors.$blue-4;
-	background-color: colors.$blue-1;
+	color: colors.$main-color-scheme-4;
+	background-color: colors.$main-color-scheme-1;
 }
 
 @mixin text-container {
@@ -48,9 +48,9 @@
 		$shadow: true,
 		$radius: true,
 		$border: true,
-		$color: colors.$blue-4
+		$color: colors.$main-color-scheme-4
 	);
-	background-color: colors.$blue-1;
+	background-color: colors.$main-color-scheme-1;
 }
 
 // Form mixins
@@ -61,7 +61,7 @@
 		$shadow: true,
 		$radius: true,
 		$border: true,
-		$color: colors.$blue-4
+		$color: colors.$main-color-scheme-4
 	);
 	width: fit-content;
 	padding: 1.5rem;
@@ -85,13 +85,13 @@
 	$radius: true,
 	$border: true,
 	$thickness: 2px,
-	$color: colors.$blue-4
+	$color: colors.$main-color-scheme-4
 ) {
 	@if $shadow {
 		box-shadow: colors.$box-shadow;
 	}
 	@if $radius {
-		border-radius: 0.25rem;
+		border-radius: 1rem;
 	}
 	@if $border {
 		border: $thickness solid $color;
