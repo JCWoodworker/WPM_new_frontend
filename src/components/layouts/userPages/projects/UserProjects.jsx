@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
-import NewProjectForm from "./NewProjectForm"
 import axios from "axios"
+
+import NewProjectForm from "./NewProjectForm"
+import PlusIcon from "../../../icons/PlusIcon"
 
 const UserProjects = () => {
 	// const [toggleProjectForm, setToggleProjectForm] = useState(false)
 	const [projects, setProjects] = useState([])
+	const [formState, setFormState] = useState(false)
 
 	const getAllData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
@@ -18,8 +19,8 @@ const UserProjects = () => {
 			const response = await axios.get(
 				`http://localhost:3000/projects/`,
 				config
-				)
-				setProjects(response.data)
+			)
+			setProjects(response.data)
 		} catch (error) {
 			console.log(`Failure ${error}`)
 		}
@@ -38,10 +39,20 @@ const UserProjects = () => {
 		)
 	})
 
+	let projectFormArea = null
+	formState
+		? (projectFormArea = (
+				<NewProjectForm projects={projects} setProjects={setProjects} />
+		))
+		: (projectFormArea = null)
+
 	return (
 		<>
-			<h1>Projects</h1>
-			<NewProjectForm projects={projects} setProjects={setProjects} />
+			<h1>
+				Projects
+				<PlusIcon formState={formState} setFormState={setFormState} />
+			</h1>
+			{projectFormArea}
 			{projectList}
 		</>
 	)

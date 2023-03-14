@@ -1,9 +1,10 @@
 @use './colors.scss' as colors;
 @use './mixins.scss' as mixins;
+@use './typeography.scss' as typeography;
 
 body {
   background-color: colors.$main-color-scheme-3;
-  //background-image: url('/WoodBackground.jpeg');
+  font-family: typeography.$ubuntu;
 }
 
 h1 {
@@ -24,4 +25,3 @@ h3 {
 p {
   color: colors.$main-color-scheme-1
 }
-

@@ -1,9 +1,5 @@
 @use "../base/" as base;
 
-.boardfoot-form {
-	margin-bottom: 1rem;
-}
-
 .regular-form {
 	@include base.form-container;
 	width: fit-content;

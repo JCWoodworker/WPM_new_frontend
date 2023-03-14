@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react"
-import { Container, Row, Col } from "react-bootstrap"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
 
@@ -43,8 +42,9 @@ const NewProjectForm = (props) => {
 	}
 
 	return (
-		<>
-			<form onSubmit={handleSubmit}>
+		<div className="regular-form">
+			<h3>Start A New Project:</h3>
+			<form onSubmit={handleSubmit} >
 				<input
 					type="text"
 					onChange={handleChange}
@@ -61,13 +61,13 @@ const NewProjectForm = (props) => {
 					type="number"
 					onChange={handleChange}
 					name="customerId"
-					placeholder="customerId"
+					placeholder="customerId (optional)"
 				></input>
 				<input
 					type="number"
 					onChange={handleChange}
 					name="laborHours"
-					placeholder="laborHours"
+					placeholder="est labor hours"
 				></input>
 				<input
 					type="number"
@@ -81,9 +81,9 @@ const NewProjectForm = (props) => {
 					name="stage"
 					placeholder="stage"
 				></input>
-				<button type="submit">Submit</button>
+				<button type="submit" className="clickable-button">Submit</button>
 			</form>
-		</>
+		</div>
 	)
 }
 

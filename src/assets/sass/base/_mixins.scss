@@ -12,7 +12,7 @@
 @mixin flex-row-center {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -56,6 +56,8 @@
 // Form mixins
 
 @mixin form-container {
+	text-align: center;
+	@include flex-row-center();
 	@include container;
 	@include border(
 		$shadow: true,

@@ -6,11 +6,6 @@ const HomePage = () => {
 	return (
 		<Container className="main_container">
 			<Row>
-				<Col className="top-col">
-					<span></span>
-				</Col>
-			</Row>
-			<Row>
 				<Col className="header-col" xs={12}>
           <h1>Pricing</h1>
 				</Col>

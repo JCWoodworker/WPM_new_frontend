@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 import "/sawdust.jpg"
 import "/glueup002.jpg"
 
@@ -9,38 +9,31 @@ const WhatIsThis = () => {
 			<h1>What Is This?</h1>
 			<Container>
 				<Row className="d-flex justify-content-center align-items-center text-center">
-					<Col>
-						<h3>
-							This is a project management tool for small woodworking
-							businesses.
-						</h3>
-					</Col>
-					<Col>
-						<img
-							className="row-image"
-							src="/glueup002.jpg"
-							alt="placeholder"
-						/>
-					</Col>
+					<h3>
+						This is a project management tool for small woodworking businesses.
+					</h3>
+					<Image
+						fluid
+						className="row-image"
+						src="/glueup002.jpg"
+						alt="placeholder"
+					/>
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center">
-					<Col>
-						<img
+						<h3>
+							Use it to calculate costs, estimate retail pricing, and even
+							manage customers with a built-in CRM.
+						</h3>
+						<Image
+							fluid
 							className="row-image"
 							src="/glueup001.jpg"
 							alt="placeholder"
 						/>
-					</Col>
-					<Col>
-						<h3>Use it to calculate costs, estimate retail pricing,
-							and even manage customers with a built-in CRM.</h3>
-					</Col>
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
-					<Col>
 						<h3>It's free to use, give it a try!</h3>
 						<h5>⬇️ Use the sign up form below ⬇️</h5>
-					</Col>
 				</Row>
 			</Container>
 		</>
