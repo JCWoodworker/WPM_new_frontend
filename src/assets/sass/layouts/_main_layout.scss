@@ -4,6 +4,7 @@
 .main_container {
 	margin: 9rem auto;
 	padding: 0rem;
+	
 }
 
 .header-row {
@@ -25,4 +26,8 @@
 
 .row-bottom-text-container {
 	@include base.text-container;
+}
+
+#user-home {
+	scroll-margin-block-start: 8.5rem;
 }

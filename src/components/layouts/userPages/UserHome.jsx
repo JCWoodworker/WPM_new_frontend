@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { loggedInContext } from "../../../App.jsx"
 
@@ -8,16 +8,15 @@ import UserProjects from "./projects/UserProjects.jsx"
 
 const UserHome = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
+	const userHomeRef = useRef(null)
+
+	useEffect(() => {
+		userHomeRef.current.scrollIntoView({ behavior: "smooth" })
+	}, [])
 
 	return (
-		<Container className="main_container">
-			<FadeInSection>
-				<Row>
-					<Col className="top-col">
-						<span></span>
-					</Col>
-				</Row>
-			</FadeInSection>
+		<Container className="main_container" id="user-home" ref={userHomeRef}>
+
 			<FadeInSection>
 				<Row>
 					<Col className="header-row" id="projects">
