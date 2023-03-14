@@ -1,0 +1,28 @@
+@use '../base' as base;
+
+.project-tile-container {
+  @include base.flex-row-center;
+}
+
+.project-tile {
+  @include base.flex-col-center;
+  @include base.border($shadow: true, $radius: true, $border: true);
+  margin: 0 auto;
+  text-align: center;
+  background-color: base.$main-color-scheme-1;
+  height: auto;
+  width: 350px;
+  &:hover {
+    cursor: pointer;
+    background-color: base.$main-color-scheme-3;
+    h3 {
+      color : base.$main-color-scheme-1;
+    }
+  }
+  &:active {
+    background-color: base.$main-color-scheme-4;
+    h3 {
+      color : base.$main-color-scheme-1;
+    }
+  }
+}

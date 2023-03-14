@@ -2,17 +2,17 @@
 
 .green-icon {
 	margin-left: 1rem;
-	color: green;
+	color: base.$main-color-scheme-1;
 	&:hover {
 		cursor: pointer;
-		color: green($color: #000000);
+		color: green
 	}
 }
 .red-icon {
 	margin-left: 1rem;
-	color: red;
+	color: base.$main-color-scheme-1;
 	&:hover {
 		cursor: pointer;
-		color: red($color: #000000);
+		color: red;
 	}
 }

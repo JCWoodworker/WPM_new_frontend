@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import axios from "axios"
 
 import NewProjectForm from "./NewProjectForm"
-import PlusIcon from "../../../icons/PlusIcon"
+import PlusMinusIcon from "../../../icons/PlusMinusIcon"
+import ProjectTile from "./ProjectTile"
 
 const UserProjects = () => {
 	// const [toggleProjectForm, setToggleProjectForm] = useState(false)
 	const [projects, setProjects] = useState([])
 	const [formState, setFormState] = useState(false)
+	const [iconState, setIconState] = useState(true)
 
 	const getAllData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
@@ -30,30 +32,39 @@ const UserProjects = () => {
 		getAllData()
 	}, [])
 
-	let projectList = projects.map((project) => {
-		return (
-			<div key={project.name}>
-				<h3>{project.name}</h3>
-				<p>{project.description}</p>
-			</div>
-		)
-	})
-
+	let projectList = null
 	let projectFormArea = null
-	formState
-		? (projectFormArea = (
-				<NewProjectForm projects={projects} setProjects={setProjects} />
-		))
-		: (projectFormArea = null)
 
+	if (formState) {
+		projectFormArea = (
+			<NewProjectForm
+				projects={projects}
+				setProjects={setProjects}
+				formState={formState}
+				setFormState={setFormState}
+				iconState={iconState}
+				setIconState={setIconState}
+			/>
+		)
+	} else {
+		projectFormArea = null
+		projectList = projects.map((project) => {
+			return <ProjectTile project={project} />
+		})
+	}
 	return (
 		<>
 			<h1>
 				Projects
-				<PlusIcon formState={formState} setFormState={setFormState} />
+				<PlusMinusIcon
+					iconState={iconState}
+					setIconState={setIconState}
+					formState={formState}
+					setFormState={setFormState}
+				/>
 			</h1>
 			{projectFormArea}
-			{projectList}
+			<div className="project-tile-container">{projectList}</div>
 		</>
 	)
 }

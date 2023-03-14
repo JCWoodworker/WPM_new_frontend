@@ -7,13 +7,15 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 0.5rem;
 }
 
 @mixin flex-row-center {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+	gap: 0.5rem;
 }
 
 // Text mixins
@@ -56,8 +58,6 @@
 // Form mixins
 
 @mixin form-container {
-	text-align: center;
-	@include flex-row-center();
 	@include container;
 	@include border(
 		$shadow: true,
@@ -69,6 +69,7 @@
 	padding: 1.5rem;
 	label {
 		font-weight: 600;
+		margin: 0.25rem;
 		padding: 0.75rem;
 	}
 	input {

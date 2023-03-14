@@ -26,10 +26,7 @@ function App() {
 	}, [])
 
 	let mainPage = <GuestHomePage />
-
-	if (loggedInState.loggedIn) {
-		mainPage = <UserHome />
-	}
+	loggedInState.loggedIn? mainPage = <UserHome /> : mainPage = <GuestHomePage />
 
 	return (
 		<loggedInContext.Provider value={[loggedInState, setLoggedInState]}>

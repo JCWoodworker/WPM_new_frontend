@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
 
-const NewProjectForm = (props) => {
+const NewProjectForm = ({ projects, setProjects, formState, setFormState, iconState, setIconState }) => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
 	const [projectPayload, setProjectPayload] = useState({
 		name: "",
@@ -34,7 +34,9 @@ const NewProjectForm = (props) => {
 			projectPayload,
 			config
 		)
-    props.setProjects([...props.projects, response.data])
+    setProjects([...projects, response.data])
+		setFormState(!formState)
+		setIconState(!iconState)
     console.log("success!!")
     } catch (error) {
       console.log(`Failure ${error}`)
