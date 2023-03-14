@@ -88,7 +88,7 @@ const SignInForm = () => {
 					</Col>
 				</Row>
 				<Row>
-					<p style={{ color: "red" }}>{formMessage}</p>
+					<p style={{ color: "red", fontWeight: 'bold' }}>{formMessage}</p>
 					<button type="submit" className="clickable-button">
 						Sign In
 					</button>
