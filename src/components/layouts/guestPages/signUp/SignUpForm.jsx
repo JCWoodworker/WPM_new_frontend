@@ -6,6 +6,8 @@ const SignUpForm = () => {
 	const [userPayload, setUserPayload] = useState({
 		firstName: "",
 		lastName: "",
+		email: "",
+		cellPhone: "",
 		username: "",
 		password: "",
 		userType: "user",
@@ -13,6 +15,8 @@ const SignUpForm = () => {
 	const [errors, setErrors] = useState({
 		firstName: "",
 		lastName: "",
+		email: "",
+		cellPhone: "",
 		username: "",
 		password: "",
 	})
@@ -32,6 +36,8 @@ const SignUpForm = () => {
 		setUserPayload({
 			firstName: "",
 			lastName: "",
+			email: "",
+			cellPhone: "",
 			username: "",
 			password: "",
 			userType: "user",
@@ -39,6 +45,8 @@ const SignUpForm = () => {
 		setErrors({
 			firstName: "",
 			lastName: "",
+			email: "",
+			cellPhone: "",
 			username: "",
 			password: "",
 		})
@@ -47,25 +55,35 @@ const SignUpForm = () => {
 	const validation = () => {
 		let firstNameError = ""
 		let lastNameError = ""
+		let emailError = ""
+		let cellPhoneError = ""
 		let usernameError = ""
 		let passwordError = ""
+		const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g
+		const cellPhoneRegex = /^\d{10}$/g
 
 		!userPayload.firstName
-			? (firstNameError = "Required")
+			? (firstNameError = "First name is required")
 			: (firstNameError = "")
-		!userPayload.lastName
-			? (lastNameError = "Required")
-			: (lastNameError = "")
+		!userPayload.lastName ? (lastNameError = "Lase name is required") : (lastNameError = "")
+		!userPayload.email || !emailRegex.test(userPayload.email)
+			? (emailError = "Must be a valid email address")
+			: (emailError = "")
+		!userPayload.cellPhone || !cellPhoneRegex.test(userPayload.cellPhone)
+			? (cellPhoneError = "Must be 10 digits, no spaces or dashes")
+			: (cellPhoneError = "")
 		!userPayload.username || userPayload.username.length < 6
-			? (usernameError = "Required - Must be at least 6 characters")
+			? (usernameError = "Must be at least 6 characters")
 			: (usernameError = "")
 		!userPayload.password || userPayload.password.length < 8
-			? (passwordError = "Required - Must be at least 8 characters")
+			? (passwordError = "Must be at least 8 characters")
 			: (passwordError = "")
 		if (firstNameError || lastNameError || usernameError || passwordError) {
 			setErrors({
 				firstName: firstNameError,
 				lastName: lastNameError,
+				email: emailError,
+				cellPhone: cellPhoneError,
 				username: usernameError,
 				password: passwordError,
 			})
@@ -76,7 +94,15 @@ const SignUpForm = () => {
 
 	const submitForm = async (e) => {
 		const isValid = validation()
-		const { firstName, lastName, username, password, userType } = userPayload
+		const {
+			firstName,
+			lastName,
+			email,
+			cellPhone,
+			username,
+			password,
+			userType,
+		} = userPayload
 		e.preventDefault()
 		if (isValid) {
 			const response = await axios.post(
@@ -98,7 +124,7 @@ const SignUpForm = () => {
 			}
 		} else {
 			setFormMessage({
-				message: "Please correct errors and try again",
+				message: "Please fill out all required fields",
 				color: "red",
 			})
 		}
@@ -122,8 +148,8 @@ const SignUpForm = () => {
 							placeholder="Enter your first name"
 							value={userPayload.firstName}
 						/>
-						<p className="errors">{errors.firstName}</p>
 					</Col>
+					<p className="errors">{errors.firstName}</p>
 				</Row>
 				<Row>
 					<Col>
@@ -137,8 +163,39 @@ const SignUpForm = () => {
 							placeholder="Enter your last name"
 							value={userPayload.lastName}
 						/>
-						<p className="errors">{errors.lastName}</p>
 					</Col>
+					<p className="errors">{errors.lastName}</p>
+				</Row>
+				<Row>
+					<Col>
+						<label>Email</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="email"
+							type="text"
+							placeholder="Enter your email"
+							value={userPayload.email}
+						/>
+					</Col>
+					<p className="errors">{errors.email}</p>
+				</Row>
+				<Row>
+					<Col>
+						<label>Cell Phone</label>
+					</Col>
+					<Col>
+						<input
+							onChange={handleChange}
+							name="cellPhone"
+							type="text"
+							placeholder="Enter your cell phone"
+							value={userPayload.cellPhone}
+							maxLength="10"
+						/>
+					</Col>
+					<p className="errors">{errors.cellPhone}</p>
 				</Row>
 				<Row>
 					<Col>
@@ -152,8 +209,8 @@ const SignUpForm = () => {
 							placeholder="Select a username"
 							value={userPayload.username}
 						/>
-						<p className="errors">{errors.username}</p>
 					</Col>
+					<p className="errors">{errors.username}</p>
 				</Row>
 				<Row>
 					<Col>
@@ -167,8 +224,8 @@ const SignUpForm = () => {
 							placeholder="Password"
 							value={userPayload.password}
 						/>
-						<p className="errors">{errors.password}</p>
 					</Col>
+					<p className="errors">{errors.password}</p>
 				</Row>
 				<Row>
 					<p style={{ color: formMessage.color, fontWeight: "bold" }}>
