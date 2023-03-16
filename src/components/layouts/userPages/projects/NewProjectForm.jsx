@@ -45,7 +45,7 @@ const NewProjectForm = ({ projects, setProjects, formState, setFormState, iconSt
 
 	return (
 		<div className="regular-form">
-			<h3>Start A New Project:</h3>
+			<h5>Start A New Project:</h5>
 			<form onSubmit={handleSubmit} >
 				<input
 					type="text"
