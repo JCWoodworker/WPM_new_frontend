@@ -3,7 +3,7 @@
 @use './typeography.scss' as typeography;
 
 body {
-  background-color: colors.$main-color-scheme-4;
+  background-color: colors.$accent-color;
   font-family: typeography.$ubuntu;
 }
 

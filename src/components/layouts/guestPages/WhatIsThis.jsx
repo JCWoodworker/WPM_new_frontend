@@ -32,7 +32,7 @@ const WhatIsThis = () => {
 						/>
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
-						<h3>It's free to use, give it a try!</h3>
+						<h5>It's free to use, give it a try!</h5>
 						<h5>⬇️ Use the sign up form below ⬇️</h5>
 				</Row>
 			</Container>
