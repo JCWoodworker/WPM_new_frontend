@@ -6,13 +6,12 @@ import PlusMinusIcon from "../../../icons/PlusMinusIcon"
 import ProjectTile from "./ProjectTile"
 
 const UserProjects = () => {
-	// const [toggleProjectForm, setToggleProjectForm] = useState(false)
 	const [projects, setProjects] = useState([])
 	const [formState, setFormState] = useState(false)
 	const [iconState, setIconState] = useState(true)
 
-	const getAllData = async () => {
-		const userData = JSON.parse(sessionStorage.getItem("userData"))
+	const getProjectData = async () => {
+		const userData = JSON.parse(sessionSrage.getItem("userData"))
 		const access_token = `Bearer ${userData.wpm_access_token}`
 		const config = {
 			headers: { Authorization: access_token },
@@ -29,7 +28,7 @@ const UserProjects = () => {
 	}
 
 	useEffect(() => {
-		getAllData()
+		getProjectData()
 	}, [])
 
 	let projectList = null
