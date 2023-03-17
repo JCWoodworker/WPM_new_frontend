@@ -9,7 +9,7 @@
   @include base.border($shadow: base.$box-shadow-black, $radius: true, $border: true);
   background-color: base.$accent-color;
   color : base.$main-color-scheme-1;
-  margin: 0 auto;
+  margin: 0.01rem auto;
   text-align: center;
   height: auto;
   width: 350px;

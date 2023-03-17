@@ -48,7 +48,7 @@ const UserProjects = () => {
 	} else {
 		projectFormArea = null
 		projectList = projects.map((project) => {
-			return <ProjectTile project={project} />
+			return <ProjectTile project={project} key={project.projectId} />
 		})
 	}
 	return (
