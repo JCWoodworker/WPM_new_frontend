@@ -5,7 +5,7 @@ $main-color-scheme-4: rgb(0, 29, 29);
 
 $accent-color: rgb(47, 79, 79);
 
-$box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.22),
+$box-shadow-black: 0px 1px 0px 0px rgba(0, 0, 0, 0.22),
 	1px 0px 0px 0px rgba(0, 0, 0, 0.22), 1px 2px 0px 0px rgba(0, 0, 0, 0.22),
 	2px 1px 0px 0px rgba(0, 0, 0, 0.22), 2px 3px 0px 0px rgba(0, 0, 0, 0.22),
 	3px 2px 0px 0px rgba(0, 0, 0, 0.22), 3px 4px 0px 0px rgba(0, 0, 0, 0.22),
@@ -14,3 +14,23 @@ $box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.22),
 	6px 5px 0px 0px rgba(0, 0, 0, 0.22), 6px 7px 0px 0px rgba(0, 0, 0, 0.22),
 	7px 6px 0px 0px rgba(0, 0, 0, 0.22), 7px 8px 0px 0px rgba(0, 0, 0, 0.22),
 	8px 7px 0px 0px rgba(0, 0, 0, 0.22);
+
+$box-shadow-scheme-1: 0px 1px 0px 0px rgba(241, 222, 210, 0.22),
+	1px 0px 0px 0px rgba(241, 222, 210, 0.22), 1px 2px 0px 0px rgba(241, 222, 210, 0.22),
+	2px 1px 0px 0px rgba(241, 222, 210, 0.22), 2px 3px 0px 0px rgba(241, 222, 210, 0.22),
+	3px 2px 0px 0px rgba(241, 222, 210, 0.22), 3px 4px 0px 0px rgba(241, 222, 210, 0.22),
+	4px 3px 0px 0px rgba(241, 222, 210, 0.22), 4px 5px 0px 0px rgba(241, 222, 210, 0.22),
+	5px 4px 0px 0px rgba(241, 222, 210, 0.22), 5px 6px 0px 0px rgba(241, 222, 210, 0.22),
+	6px 5px 0px 0px rgba(241, 222, 210, 0.22), 6px 7px 0px 0px rgba(241, 222, 210, 0.22),
+	7px 6px 0px 0px rgba(241, 222, 210, 0.22), 7px 8px 0px 0px rgba(241, 222, 210, 0.22),
+	8px 7px 0px 0px rgba(241, 222, 210, 0.22);
+
+$box-shadow-accent: 0px 1px 0px 0px rgba(47, 79, 79, 0.22),
+	1px 0px 0px 0px rgba(47, 79, 79, 0.22), 1px 2px 0px 0px rgba(47, 79, 79, 0.22),
+	2px 1px 0px 0px rgba(47, 79, 79, 0.22), 2px 3px 0px 0px rgba(47, 79, 79, 0.22),
+	3px 2px 0px 0px rgba(47, 79, 79, 0.22), 3px 4px 0px 0px rgba(47, 79, 79, 0.22),
+	4px 3px 0px 0px rgba(47, 79, 79, 0.22), 4px 5px 0px 0px rgba(47, 79, 79, 0.22),
+	5px 4px 0px 0px rgba(47, 79, 79, 0.22), 5px 6px 0px 0px rgba(47, 79, 79, 0.22),
+	6px 5px 0px 0px rgba(47, 79, 79, 0.22), 6px 7px 0px 0px rgba(47, 79, 79, 0.22),
+	7px 6px 0px 0px rgba(47, 79, 79, 0.22), 7px 8px 0px 0px rgba(47, 79, 79, 0.22),
+	8px 7px 0px 0px rgba(47, 79, 79, 0.22);

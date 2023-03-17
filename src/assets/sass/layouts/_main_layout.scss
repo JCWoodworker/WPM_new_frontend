@@ -8,7 +8,7 @@
 }
 
 .header-row {
-	@include base.border($thickness: 3px);
+	@include base.border($shadow: base.$box-shadow-black, $thickness: 3px);
 	min-height: 40vh;
 	width: 100%;
 	background-color: base.$main-color-scheme-2;
