@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 import NewProjectForm from "./NewProjectForm"
@@ -11,7 +11,7 @@ const UserProjects = () => {
 	const [formState, setFormState] = useState(false)
 	const [iconState, setIconState] = useState(true)
 
-	const getAllData = async () => {
+	const getProjectData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
 		const access_token = `Bearer ${userData.wpm_access_token}`
 		const config = {
@@ -29,7 +29,7 @@ const UserProjects = () => {
 	}
 
 	useEffect(() => {
-		getAllData()
+		getProjectData()
 	}, [])
 
 	let projectList = null
