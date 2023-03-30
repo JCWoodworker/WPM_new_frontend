@@ -2,7 +2,16 @@ import React, { useState, useContext } from "react"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
 
-const NewProjectForm = ({ projects, setProjects, formState, setFormState, iconState, setIconState }) => {
+const NewProjectForm = ({
+	projects,
+	setProjects,
+	formState,
+	setFormState,
+	iconState,
+	setIconState,
+	projectListState,
+	setProjectListState,
+}) => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
 	const [projectPayload, setProjectPayload] = useState({
 		name: "",
@@ -24,29 +33,30 @@ const NewProjectForm = ({ projects, setProjects, formState, setFormState, iconSt
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
-		const access_token = (`Bearer ${userData.wpm_access_token}`)
+		const access_token = `Bearer ${userData.wpm_access_token}`
 		const config = {
 			headers: { Authorization: access_token },
 		}
-    try {
-		const response = await axios.post(
-			"http://localhost:3000/projects/newProject",
-			projectPayload,
-			config
-		)
-    setProjects([...projects, response.data])
-		setFormState(!formState)
-		setIconState(!iconState)
-    console.log("success!!")
-    } catch (error) {
-      console.log(`Failure ${error}`)
-    }
+		try {
+			const response = await axios.post(
+				"http://localhost:3000/projects/newProject",
+				projectPayload,
+				config
+			)
+			setProjects([...projects, response.data])
+			setFormState(!formState)
+			setIconState(!iconState)
+			setProjectListState(!projectListState)
+			console.log("success!!")
+		} catch (error) {
+			console.log(`Failure ${error}`)
+		}
 	}
 
 	return (
 		<div className="regular-form">
 			<h5>Start A New Project:</h5>
-			<form onSubmit={handleSubmit} >
+			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
 					onChange={handleChange}
@@ -83,7 +93,9 @@ const NewProjectForm = ({ projects, setProjects, formState, setFormState, iconSt
 					name="stage"
 					placeholder="stage"
 				></input>
-				<button type="submit" className="clickable-button">Submit</button>
+				<button type="submit" className="clickable-button">
+					Submit
+				</button>
 			</form>
 		</div>
 	)

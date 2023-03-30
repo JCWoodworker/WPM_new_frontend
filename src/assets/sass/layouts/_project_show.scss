@@ -1,0 +1,27 @@
+@use '../base' as base;
+
+.project-show-container {
+    @include base.flex-col-center;
+    h3 {
+        font-weight: bolder;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+.details-list {
+    color: base.$main-color-scheme-1;;
+}
+
+.project-icons {
+    color: base.$main-color-scheme-1;
+    margin: 0.5rem auto;
+    i {
+        font-size: 2rem;
+        margin: 0 2rem;
+        &:hover {
+            cursor: pointer;
+        }
+    };
+}
