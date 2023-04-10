@@ -6,7 +6,7 @@ import PlusMinusIcon from "../../../icons/PlusMinusIcon"
 import ProjectTile from "./ProjectTile"
 import ProjectShow from "./ProjectShow"
 
-const UserProjects = () => {
+const UserProjectsIndex = () => {
 	const [projects, setProjects] = useState([])
 	const [formState, setFormState] = useState(false)
 	const [iconState, setIconState] = useState(true)
@@ -99,4 +99,4 @@ const UserProjects = () => {
 	return <>{projectContent}</>
 }
 
-export default UserProjects
+export default UserProjectsIndex
