@@ -17,8 +17,7 @@ const ProjectTile = ({
 
 	return (
 		<div className="project-tile" onClick={handleTileClick}>
-			<h5>{project.name}</h5>
-			<p>{project.description}</p>
+			<h5><span className="highlight">{project.name.toUpperCase()}</span> - {project.description}</h5>
 		</div>
 	)
 }
