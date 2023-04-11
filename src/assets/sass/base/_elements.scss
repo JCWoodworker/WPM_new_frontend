@@ -1,6 +1,6 @@
 @use './colors.scss' as colors;
 @use './mixins.scss' as mixins;
-@use './typeography.scss' as typeography;
+@use './fonts.scss' as typeography;
 
 body {
   background-color: colors.$accent-color;

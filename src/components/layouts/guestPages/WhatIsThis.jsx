@@ -24,12 +24,6 @@ const WhatIsThis = () => {
 							Use it to calculate costs, estimate retail pricing, and even
 							manage customers with a built-in CRM.
 						</h3>
-						<Image
-							fluid
-							className="row-image"
-							src="/glueup001.jpg"
-							alt="placeholder"
-						/>
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
 						<h5>It's free to use, give it a try!</h5>
