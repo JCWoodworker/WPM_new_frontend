@@ -14,10 +14,12 @@
 		flex-direction: row;
 		justify-content: space-around;
 	}
-	input {
-		width: 100px;
+	input, label, select {
+		width: 120px;
 	};
-	label {
-		width: 100px;
-	};
+	select {
+		height: 35px;
+		border-radius: 0.35rem;
+	}
+	
 }
