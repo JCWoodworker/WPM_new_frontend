@@ -83,7 +83,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 						<option value="Cedar">Cedar</option>
 						<option value="Ash">Ash</option>
 						<option value="Poplar">Poplar</option>
-						<option value="Willow">Other</option>
+						<option value="Unlisted">Unlisted</option>
 					</select>
 				</div>
 			</form>
