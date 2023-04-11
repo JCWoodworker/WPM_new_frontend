@@ -5,6 +5,7 @@ import { loggedInContext } from "../../../App.jsx"
 import FadeInSection from "../../services/FadeInSection.jsx"
 
 import UserProjectsIndex from "./projects/UserProjectsIndex.jsx"
+import BoardFootIndex from "./boardfootCalculator.jsx/BoardFootIndex.jsx"
 
 const UserHome = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
@@ -48,11 +49,7 @@ const UserHome = () => {
 			<FadeInSection>
 				<Row>
 					<Col className="header-row" id="calculator">
-						<h1>
-							BF Calc
-							<i className="bi bi-cone-striped"></i>
-						</h1>
-						<p>Under Construction</p>
+						<BoardFootIndex />
 					</Col>
 				</Row>
 			</FadeInSection>

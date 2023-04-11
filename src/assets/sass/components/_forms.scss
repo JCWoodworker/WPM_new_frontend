@@ -4,3 +4,20 @@
 	@include base.form-container;
 	// width: fit-content;
 }
+
+.board-foot-form {
+	text-align: center;
+	color: base.$main-color-scheme-1;
+	.form-input-container {
+		margin: 0.5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	input {
+		width: 100px;
+	};
+	label {
+		width: 100px;
+	};
+}
