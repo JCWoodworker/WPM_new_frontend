@@ -106,7 +106,7 @@ const SignUpForm = () => {
 		e.preventDefault()
 		if (isValid) {
 			const response = await axios.post(
-				"http://18.209.59.224:3000/users/register",
+				"https://18.209.59.224:3000/users/register",
 				userPayload
 			)
 			if (response.data === "Username already exists") {
