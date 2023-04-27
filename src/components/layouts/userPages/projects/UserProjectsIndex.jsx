@@ -22,7 +22,7 @@ const UserProjectsIndex = () => {
 		}
 		try {
 			const response = await axios.get(
-				`http://localhost:3000/projects/`,
+				`http://18.209.59.224:3000/projects/`,
 				config
 			)
 			setProjects(response.data)

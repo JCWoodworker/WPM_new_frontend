@@ -39,7 +39,7 @@ const NewProjectForm = ({
 		}
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/projects/newProject",
+				"http://18.209.59.224:3000/projects/newProject",
 				projectPayload,
 				config
 			)
