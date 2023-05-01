@@ -7,17 +7,17 @@ const WhatIsThis = () => {
 	return (
 		<>
 			<h1>What Is This?</h1>
-			<Container>
+			<Container className="what-is-this">
 				<Row className="d-flex justify-content-center align-items-center text-center">
 					<h3>
 						This is a project management tool for small woodworking businesses.
 					</h3>
-					<Image
+					{/* <Image
 						fluid
 						className="row-image"
 						src="/glueup002.jpg"
 						alt="placeholder"
-					/>
+					/> */}
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center">
 						<h3>
