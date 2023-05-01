@@ -88,12 +88,26 @@ const NewProjectForm = ({
 					name="quantity"
 					placeholder="quantity"
 				></input>
-				<input
-					type="text"
-					onChange={handleChange}
-					name="stage"
-					placeholder="stage"
-				></input>
+				<select
+						name="stage"
+						onChange={handleChange}
+            defaultValue={'DEFAULT'}
+					>
+						<option value="DEFAULT" hidden disabled>
+							Stage
+						</option>
+						<option value="Design">Design</option>
+						<option value="Cutlist">Cutlist</option>
+						<option value="Wood Selection">Wood Selection</option>
+						<option value="Milling">Milling</option>
+						<option value="Assembly & Glue">Assembly & Glue</option>
+						<option value="Final Dimensioning">Final Dimensioning</option>
+						<option value="Sanding & Edging">Sanding & Edging</option>
+						<option value="Finish">Finish</option>
+						<option value="Delivery">Delivery</option>
+						<option value="Delivered">Delivered</option>
+						<option value="Issues">Issues</option>
+					</select>
 				<button type="submit" className="clickable-button">
 					Submit
 				</button>
