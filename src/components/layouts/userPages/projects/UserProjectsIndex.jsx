@@ -5,6 +5,7 @@ import NewProjectForm from "./NewProjectForm"
 import PlusMinusIcon from "../../../icons/PlusMinusIcon"
 import ProjectTile from "./ProjectTile"
 import ProjectShow from "./ProjectShow"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const UserProjectsIndex = () => {
 	const [projects, setProjects] = useState([])
@@ -22,7 +23,7 @@ const UserProjectsIndex = () => {
 		}
 		try {
 			const response = await axios.get(
-				`https://wpm-new-backend-staging.herokuapp.com/projects/`,
+				`${API_BASE_URL}/projects/`,
 				config
 			)
 			setProjects(response.data)
