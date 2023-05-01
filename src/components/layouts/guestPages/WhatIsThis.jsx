@@ -10,7 +10,7 @@ const WhatIsThis = () => {
 			<Container className="what-is-this">
 				<Row className="d-flex justify-content-center align-items-center text-center">
 					<h3>
-						This is a project management tool for small woodworking businesses.
+						This is a project management tool <br /> for small woodworking businesses.
 					</h3>
 					{/* <Image
 						fluid
@@ -21,7 +21,7 @@ const WhatIsThis = () => {
 				</Row>
 				<Row className="d-flex justify-content-center align-items-center text-center">
 						<h3>
-							Use it to calculate costs, estimate retail pricing, and even
+							Use it to calculate costs, estimate retail pricing, <br /> and even
 							manage customers with a built-in CRM.
 						</h3>
 				</Row>
