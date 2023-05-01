@@ -106,7 +106,7 @@ const SignUpForm = () => {
 		e.preventDefault()
 		if (isValid) {
 			const response = await axios.post(
-				"http://localhost:3000/users/register",
+				`https://wpm-new-backend-staging.herokuapp.com/users/register`,
 				userPayload
 			)
 			if (response.data === "Username already exists") {

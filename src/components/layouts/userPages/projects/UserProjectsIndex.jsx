@@ -22,7 +22,7 @@ const UserProjectsIndex = () => {
 		}
 		try {
 			const response = await axios.get(
-				`http://localhost:3000/projects/`,
+				`https://wpm-new-backend-staging.herokuapp.com/projects/`,
 				config
 			)
 			setProjects(response.data)

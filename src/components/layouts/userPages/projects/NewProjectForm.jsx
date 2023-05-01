@@ -39,7 +39,7 @@ const NewProjectForm = ({
 		}
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/projects/newProject",
+				`https://wpm-new-backend-staging.herokuapp.com/projects/newProject`,
 				projectPayload,
 				config
 			)
