@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const SignInForm = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
@@ -30,7 +31,7 @@ const SignInForm = () => {
 		e.preventDefault()
 		try {
 			const response = await axios.post(
-				`https://wpm-new-backend-staging.herokuapp.com/users/auth/login`,
+				`${API_BASE_URL}/users/auth/login`,
 				userPayload
 			)
 			if (response.status === 201) {

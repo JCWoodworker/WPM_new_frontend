@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const SignUpForm = () => {
 	const [userPayload, setUserPayload] = useState({
@@ -106,7 +107,7 @@ const SignUpForm = () => {
 		e.preventDefault()
 		if (isValid) {
 			const response = await axios.post(
-				`https://wpm-new-backend-staging.herokuapp.com/users/register`,
+				`${API_BASE_URL}/users/register`,
 				userPayload
 			)
 			if (response.data === "Username already exists") {

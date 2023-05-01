@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import { loggedInContext } from "../../../../App.jsx"
 import axios from "axios"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const NewProjectForm = ({
 	projects,
@@ -39,7 +40,7 @@ const NewProjectForm = ({
 		}
 		try {
 			const response = await axios.post(
-				`https://wpm-new-backend-staging.herokuapp.com/projects/newProject`,
+				`${API_BASE_URL}/projects/newProject`,
 				projectPayload,
 				config
 			)
