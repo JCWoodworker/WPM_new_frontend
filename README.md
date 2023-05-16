@@ -4,12 +4,12 @@
 Table Of Contents:
 [Current Progress](#currentProgress)
 [Next Steps](#nextSteps)
-  * [Upcoming Features](#upcomingFeatures)
-  * [CRM System](#crmComponent)
-  * [Analytics](#analyticsComponent)
+  [Upcoming Features](#upcomingFeatures)
+  [CRM System](#crmComponent)
+  [Analytics](#analyticsComponent)
 [Dev Ops Breakdown](#devOpsBreakdown)
-  * [Front End Deployment](#frontEndDeployment)
-  * [Back End Deployment](#backEndDeployment)
+  [Front End Deployment](#frontEndDeployment)
+  [Back End Deployment](#backEndDeployment)
 
 ## Current Progress: (#currentProgress)
 
