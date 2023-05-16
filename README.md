@@ -1,12 +1,44 @@
 # WPM_new_frontend
-## Completely re-writing client side code for Woodworker's Project Management app
+## Completely re-writing client side code for Woodworker's Project Management app ... Take a look while it is under construction!!
 
-### Take a look while it is under construction!!
+##Current Progress:
+Users can do the following:
+* Sign up for an account
+* Sign into their account
+* Create a new project
+* Utilize the board foot calculator and save a tally of calculations for differet sized boards
+* Sign out
 
-### There are no calls to the new backend yet.  This is just the process of setting up the UI.
-* Clone this repo
-* Run ```yarn install```
-* Run ```yarn dev```
-* Press the ```o``` key from the same terminal to open the site!
+##Next Steps:
+* Enable a user to edit a project after it is created
+* Add ability to upload pictures to a project
+* Add ability to choose from a list of woods and pricing to add to a project
+* Add materials list with pricing so users can add the cost of things like glue or tape to a project
+* Enable user to quickly add their list of tallies from the boardfoot calculator to a specific project
+* Create user settings to handle wood waste, labor rate, and retail markup
+* Create an editable price list that will populate the wood list when selecting woods for a project or for the board foot calculator
+  * In the previous iteration of this app there was an admin account that handled this.
+  * It was meant for a lumber yard to distribute the app to their customers and control the pricing structure
+  * In this version I plan on allowing the user to have control over their price list
+* Create the entire CRM system
+  * Utilize Twilio/Sendgrid APIs so users can text and email their customer right from the app.
+  * User an add a customer to a specific project and data will be recorded for analytics
+    * The customer can be automatically or manually emailed or texted whenever progress is changed on their project
+      * Images Uploaded
+      * Status Changed
+      * Invoice or Quote Sent
+      * Timeline Changes
+      * Etc ... 
+* Create the analytics component
+  * Users will see a quick rundown of:
+    * Open projects
+    * Due dates
+    * Yearly/monthly/weekly sales on delivered projects
+    * Up to date tally on future income from open projects
+  * Users can also run reports such as history from specific customers and/or projects
+  * Users can choose to view tables, data visualizations, or both
 
-* This assumes you have Node set up on your computer
+##There's so much more on the way!!!
+
+
+
