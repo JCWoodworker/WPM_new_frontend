@@ -2,12 +2,12 @@
 ## Completely re-writing client side code for Woodworker's Project Management app ... Take a look while it is under construction!!
 
 Table Of Contents:
-[Current Progress](#currentProgress)
-[Next Steps](#nextSteps)
+- [Current Progress](#currentProgress)
+- [Next Steps](#nextSteps)
   [Upcoming Features](#upcomingFeatures)
   [CRM System](#crmComponent)
   [Analytics](#analyticsComponent)
-[Dev Ops Breakdown](#devOpsBreakdown)
+- [Dev Ops Breakdown](#devOpsBreakdown)
   [Front End Deployment](#frontEndDeployment)
   [Back End Deployment](#backEndDeployment)
 
