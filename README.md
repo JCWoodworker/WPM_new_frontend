@@ -12,7 +12,7 @@ Table Of Contents: <a name="table-of-contents"></a>
   - [Back End Deployment](#back-end-deployment)
 
 ## Current Progress: <a name="current-progress"></a>
-[Table Of Contents](#table-of-contents)
+[Back To Table Of Contents](#table-of-contents)
 
 Users can do the following:
 * Sign up for an account
@@ -22,7 +22,7 @@ Users can do the following:
 * Sign out
 
 ## Next Steps: <a name="next-steps"></a>
-[Table Of Contents](#table-of-contents)
+[Back To Table Of Contents](#table-of-contents)
 
 * Enable a user to edit a project after it is created <a name="upcoming-features"></a>
 * Add ability to upload pictures to a project
@@ -53,7 +53,7 @@ Users can do the following:
   * Users can choose to view tables, data visualizations, or both
 
 ## Dev Ops Breakdown <a name="dev-ops-breakdown"></a>
-[Table Of Contents](#table-of-contents)
+[Back To Table Of Contents](#table-of-contents)
 
 * Deployed on Netlify <a name="front-end-deployment"></a>
   * Preprod site = https://www.woodpromanpreprod.netlify.app
