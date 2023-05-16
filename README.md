@@ -11,7 +11,7 @@ Table Of Contents:
   * [Front End Deployment](#frontEndDeployment)
   * [Back End Deployment](#backEndDeployment)
 
-## Current Progress: {#currentProgress}
+## Current Progress: (#currentProgress)
 
 Users can do the following:
 * Sign up for an account
@@ -20,9 +20,9 @@ Users can do the following:
 * Utilize the board foot calculator and save a tally of calculations for differet sized boards
 * Sign out
 
-## Next Steps: {#nextSteps}
+## Next Steps: (#nextSteps)
 
-* Enable a user to edit a project after it is created {#upcomingFeatures}
+* Enable a user to edit a project after it is created (#upcomingFeatures)
 * Add ability to upload pictures to a project
 * Add ability to choose from a list of woods and pricing to add to a project
 * Add materials list with pricing so users can add the cost of things like glue or tape to a project
@@ -32,7 +32,7 @@ Users can do the following:
   * In the previous iteration of this app there was an admin account that handled this.
   * It was meant for a lumber yard to distribute the app to their customers and control the pricing structure
   * In this version I plan on allowing the user to have control over their price list
-* Create the entire CRM system {#crmComponent}
+* Create the entire CRM system (#crmComponent)
   * Utilize Twilio/Sendgrid APIs so users can text and email their customer right from the app.
   * User an add a customer to a specific project and data will be recorded for analytics
     * The customer can be automatically or manually emailed or texted whenever progress is changed on their project
@@ -41,7 +41,7 @@ Users can do the following:
       * Invoice or Quote Sent
       * Timeline Changes
       * Etc ... 
-* Create the analytics component {#analyticsComponent}
+* Create the analytics component (#analyticsComponent)
   * Users will see a quick rundown of:
     * Open projects
     * Due dates
@@ -50,15 +50,15 @@ Users can do the following:
   * Users can also run reports such as history from specific customers and/or projects
   * Users can choose to view tables, data visualizations, or both
 
-## Dev Ops Breakdown {#devOpsBreakdown}
+## Dev Ops Breakdown (#devOpsBreakdown)
 
-* Deployed on Netlify {#frontEndDeployment}
+* Deployed on Netlify (#frontEndDeployment)
   * Preprod site = https://www.woodpromanpreprod.netlify.app
     * Auto deploys on any push to preprod branch in this repo
   * Prod site = https://www.woodproman.com
     * Auto deploys on any push to main branch in this repo
 
-* Backend is deployed on Heroku {#backEndDeployment}
+* Backend is deployed on Heroku (#backEndDeployment)
   * Staging - https://wpm-new-backend-staging.herokuapp.com/
     * Preprod branch utilizes this when communicating with server
     * This has it's own Postgres database for experimentation
