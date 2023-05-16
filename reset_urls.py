@@ -12,7 +12,7 @@ def search_and_replace(file_name, old_text, new_text):
 # Specify the file name and the old and new text to replace
 file_name = '.env.production'
 old_text = 'https://wpm-new-backend-staging.herokuapp.com'
-new_text = 'https://wpm-new-backend-production.herokuapp.com/'
+new_text = 'https://wpm-new-backend-production.herokuapp.com'
 
 # Call the function to search and replace the text
 search_and_replace(file_name, old_text, new_text)
