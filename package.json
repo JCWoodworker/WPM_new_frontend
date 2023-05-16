@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "python reset_urls && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
