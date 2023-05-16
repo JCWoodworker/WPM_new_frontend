@@ -35,7 +35,7 @@ const UserProjectsIndex = () => {
 	useEffect(() => {
 		getProjectData()
 	}, [])
-
+	
 	let projectContent = null
 
 	if (projectShowState) {
