@@ -1,4 +1,6 @@
 .fade-in-section {
+  width: 96vw;
+  min-height: 80vh;
   opacity: 0;
   visibility: hidden;
   transition: opacity 1400ms ease-out,
