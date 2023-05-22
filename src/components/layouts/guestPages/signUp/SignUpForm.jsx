@@ -238,13 +238,6 @@ const SignUpForm = () => {
 				</Row>
 			</form>
 
-			<Row className="d-flex justify-content-center align-items-center text-center row-bottom-text-container">
-				<h5>
-					Side note ... You'll be able to adjust specific settings like labor
-					rate, retail markup, and even wood waste (which accounts for the
-					percentage of wood lost to milling)!
-				</h5>
-			</Row>
 		</Container>
 	)
 }
