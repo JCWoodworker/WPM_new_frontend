@@ -15,7 +15,7 @@ const ProjectShow = ({
 		setProjectShowState(false)
 	}
 	const edit = () => {
-		alert("Edit Project")
+		alert("Edit button has not been implemented yet")
 	}
 
 	return (
