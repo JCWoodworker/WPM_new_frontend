@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react"
 
-const Tallies = ({ tallies, setTallies }) => {
+const Tallies = ({ tallies, setTallies, tallyAlert }) => {
 	const [tallyTotals, setTallyTotals] = useState({
 		totalBoardFeet: 0,
 		totalCost: 0,
 	})
 
-	const handleDeleteSingleTally = (event) => {
-		event.preventDefault()
-		const confirmation = confirm("Are you sure you want to delete this tally?")
-		if (!confirmation) {
-			return
+	const handleDeleteSingleTally = (tallyId) => {
+		if (!tallyAlert) {
+			const confirmation = confirm("Are you sure you want to delete this tally?")
+			if (!confirmation) {
+				return
+			}
 		}
-		const clickedIndex = event.currentTarget.key
-		const newTallies = [...tallies]
-		newTallies.splice(clickedIndex, 1)
+		const newTallies = tallies.filter(tally => tally.id != tallyId)
 		setTallies(newTallies)
 	}
 
@@ -39,9 +38,10 @@ const Tallies = ({ tallies, setTallies }) => {
 
 	let talliesList = null
 	if (tallies.length > 0) {
-		talliesList = tallies.map((tally, index) => {
+		talliesList = tallies.map((tally) => {
+			const handleClick = (event) => handleDeleteSingleTally(tally.id)
 			return (
-				<li key={index} onClick={handleDeleteSingleTally}>
+				<li key={tally.id} onClick={handleClick}>
 					{tally.woodType} - {tally.boardFeet} BF - ${tally.cost}
 					<span className="delete-tally">X</span>
 				</li>

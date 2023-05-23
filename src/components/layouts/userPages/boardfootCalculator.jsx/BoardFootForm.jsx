@@ -3,7 +3,10 @@ import React, { useState } from "react"
 const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 	const handleOnChange = (e) => {
 		e.preventDefault()
-		const { name, value } = e.target
+		let { name, value } = e.target
+		if (name != "woodType") {
+			value = parseFloat(value)
+		}
 		setBoardFootFormValues({ ...boardFootFormValues, [name]: value })
 	}
 
@@ -15,7 +18,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 					<label htmlFor="boardFootForm__length">Length</label>
 					<input
 						type="number"
-						min="0.01"
+						min="0.25"
 						className="form-control"
 						id="boardFootForm_length"
 						placeholder="inches"
@@ -28,7 +31,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 					<label htmlFor="boardFootForm__width">Width</label>
 					<input
 						type="number"
-						min="0.01"
+						min="0.25"
 						className="form-control"
 						id="boardFootForm_width"
 						placeholder="inches"
@@ -41,7 +44,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 					<label htmlFor="boardFootForm_thickness">Thickness</label>
 					<input
 						type="number"
-						min="0.01"
+						min="0.25"
 						className="form-control"
 						id="boardFootForm_thickness"
 						placeholder="inches"

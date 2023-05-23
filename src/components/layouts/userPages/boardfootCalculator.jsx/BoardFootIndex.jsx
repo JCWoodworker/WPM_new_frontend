@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
+import { v4 as uuid } from "uuid"
 
 import BoardFootForm from "./BoardFootForm"
 import Tallies from "./Tallies"
 
 const BoardFootIndex = () => {
 	const [boardFootFormValues, setBoardFootFormValues] = useState({
-		length: "",
-		width: "",
-		thickness: "",
-		price: "",
+		length: null,
+		width: null,
+		thickness: null,
+		price: null,
 		woodType: "",
 	})
 	const [tallies, setTallies] = useState([])
@@ -17,18 +18,22 @@ const BoardFootIndex = () => {
 		cost: "",
 	})
 
+	const [tallyAlert, setTallyAlert] = useState(false)
+
 	const handleTallyAdd = () => {
 		if (
 			!boardFootResults.boardFeet ||
 			!boardFootResults.cost ||
-			parseInt(boardFootResults.boardFeet) <= 0 ||
-			parseInt(boardFootResults.cost) <= 0
+			parseFloat(boardFootResults.boardFeet) <= 0 ||
+			parseFloat(boardFootResults.cost) <= 0 ||
+			(boardFootFormValues.woodType.trim() === "")
 		) {
 			return alert("Please enter values for all fields")
 		}
 		return setTallies([
 			...tallies,
 			{
+				id: uuid(),
 				woodType: boardFootFormValues.woodType,
 				boardFeet: boardFootResults.boardFeet,
 				cost: boardFootResults.cost,
@@ -38,6 +43,10 @@ const BoardFootIndex = () => {
 
 	const handleTallyReset = () => {
 		setTallies([])
+	}
+
+	const handleCheckboxChange = () => {
+		setTallyAlert(!tallyAlert)
 	}
 
 	useEffect(() => {
@@ -71,9 +80,17 @@ const BoardFootIndex = () => {
 						<button onClick={handleTallyAdd}>Add Tally</button>
 						<button onClick={handleTallyReset}>Reset Tallies</button>
 					</div>
+					<label className="tally-alert-checkbox">
+						{`Check this box to remove the \nalert box when deleting a tally -->  `}
+						<input
+							type="checkbox"
+							checked={tallyAlert}
+							onChange={handleCheckboxChange}
+						></input>
+					</label>
 				</div>
 			</div>
-			<Tallies tallies={tallies} setTallies={setTallies} />
+			<Tallies tallies={tallies} setTallies={setTallies} tallyAlert={tallyAlert} />
 		</div>
 	)
 }
