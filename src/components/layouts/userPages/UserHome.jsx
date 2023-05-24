@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { loggedInContext } from "../../../App.jsx"
 
@@ -11,6 +11,24 @@ import UserAnalytics from "./analytics/UserAnalytics.jsx"
 const UserHome = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
 	const userHomeRef = useRef(null)
+	const [projects, setProjects] = useState([])
+ 
+	const getProjects = async () => {
+		const userData = JSON.parse(sessionStorage.getItem("userData"))
+		const access_token = `Bearer ${userData.wpm_access_token}`
+		const config = {
+			headers: { Authorization: access_token },
+		}
+		try {
+			const response = await axios.get(
+				`${API_BASE_URL}/projects/`,
+				config
+			)
+			setProjects(response.data)
+		} catch (error) {
+			console.log(`Failure ${error}`)
+		}
+	}
 
 	useEffect(() => {
 		userHomeRef.current.scrollIntoView({ behavior: "smooth" })
@@ -21,7 +39,7 @@ const UserHome = () => {
 			<FadeInSection>
 				<Row>
 					<Col className="header-row" id="projects">
-						<UserProjectsIndex />
+						<UserProjectsIndex projects={projects}/>
 					</Col>
 				</Row>
 			</FadeInSection>

@@ -15,7 +15,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 			<form className="board-foot-form">
 				<h3>Use Inches For All Fields</h3>
 				<div className="form-input-container">
-					<label htmlFor="boardFootForm__length">Length</label>
+					<label htmlFor="boardFootForm_length">Length</label>
 					<input
 						type="number"
 						min="0.25"
@@ -28,7 +28,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 					/>
 				</div>
 				<div className="form-input-container">
-					<label htmlFor="boardFootForm__width">Width</label>
+					<label htmlFor="boardFootForm_width">Width</label>
 					<input
 						type="number"
 						min="0.25"

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react"
-import axios from "axios"
 
 import NewProjectForm from "./NewProjectForm"
 import PlusMinusIcon from "../../../icons/PlusMinusIcon"
@@ -7,34 +6,13 @@ import ProjectTile from "./ProjectTile"
 import ProjectShow from "./ProjectShow"
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
-const UserProjectsIndex = () => {
-	const [projects, setProjects] = useState([])
+const UserProjectsIndex = ({projects}) => {
+	const [allProjects, setAllProjects] = useState([projects])
 	const [formState, setFormState] = useState(false)
 	const [iconState, setIconState] = useState(true)
 	const [projectListState, setProjectListState] = useState(true)
 	const [projectShowState, setProjectShowState] = useState(false)
 	const [activeProject, setActiveProject] = useState(null)
-
-	const getProjectData = async () => {
-		const userData = JSON.parse(sessionStorage.getItem("userData"))
-		const access_token = `Bearer ${userData.wpm_access_token}`
-		const config = {
-			headers: { Authorization: access_token },
-		}
-		try {
-			const response = await axios.get(
-				`${API_BASE_URL}/projects/`,
-				config
-			)
-			setProjects(response.data)
-		} catch (error) {
-			console.log(`Failure ${error}`)
-		}
-	}
-
-	useEffect(() => {
-		getProjectData()
-	}, [])
 
 	let projectContent = null
 
@@ -65,8 +43,8 @@ const UserProjectsIndex = () => {
 				</h1>
 				{formState ? (
 					<NewProjectForm
-						projects={projects}
-						setProjects={setProjects}
+						allProjects={allProjects}
+						setAllProjects={setAllProjects}
 						formState={formState}
 						setFormState={setFormState}
 						iconState={iconState}
