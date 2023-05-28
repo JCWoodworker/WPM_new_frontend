@@ -6,6 +6,7 @@ import FadeInSection from "../../services/FadeInSection.jsx"
 
 import UserProjectsIndex from "./projects/UserProjectsIndex.jsx"
 import BoardFootIndex from "./boardfootCalculator.jsx/BoardFootIndex.jsx"
+import UserAnalytics from "./analytics/UserAnalytics.jsx"
 
 const UserHome = () => {
 	const [loggedInState, setLoggedInState] = useContext(loggedInContext)
@@ -38,11 +39,7 @@ const UserHome = () => {
 			<FadeInSection>
 				<Row>
 					<Col className="header-row" id="analytics">
-						<h1>
-							Analytics
-							<i className="bi bi-cone-striped"></i>
-						</h1>
-						<p>Under Construction</p>
+						<UserAnalytics />
 					</Col>
 				</Row>
 			</FadeInSection>
