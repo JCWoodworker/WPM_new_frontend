@@ -14,7 +14,7 @@ const UserProjectsIndex = () => {
 	const [projectListState, setProjectListState] = useState(true)
 	const [projectShowState, setProjectShowState] = useState(false)
 	const [activeProject, setActiveProject] = useState(null)
-
+	debugger
 	const getProjectData = async () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"))
 		const access_token = `Bearer ${userData.wpm_access_token}`
