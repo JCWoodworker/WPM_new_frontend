@@ -66,7 +66,7 @@ const BoardFootForm = ({ boardFootFormValues, setBoardFootFormValues }) => {
 						onChange={handleOnChange}
 					/>
 				</div>
-        {/* These options will eventually be mapped from a price-list table on the server */}
+        {/* These options will eventually be mapped from a price-list table from the server */}
 				<div className="form-input-container">
 					<label htmlFor="woodType">Wood Type</label>
 					<select
