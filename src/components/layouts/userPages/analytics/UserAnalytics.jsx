@@ -13,7 +13,6 @@ const UserAnalytics = () => {
 		}
 		try {
 			let res = await axios.get(`${API_BASE_URL}/users/analytics`, config)
-      debugger
 			setAnalyticsData(res.data)
 		} catch (err) {
 			console.log(err)
